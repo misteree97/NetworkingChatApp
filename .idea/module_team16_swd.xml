@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_team16_swd" default="compile.module.team16_swd">
+  <dirname property="module.team16_swd.basedir" file="${ant.file.module_team16_swd}"/>
+  
+  <property name="module.jdk.home.team16_swd" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.team16_swd" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.team16_swd" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.team16_swd" value="-encoding UTF-8 -source 9 -target 9 ${compiler.args}"/>
+  
+  <property name="team16_swd.output.dir" value="${module.team16_swd.basedir}/../project/production/team16_swd"/>
+  <property name="team16_swd.testoutput.dir" value="${module.team16_swd.basedir}/../project/test/team16_swd"/>
+  
+  <path id="team16_swd.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="team16_swd.module.production.classpath">
+    <path refid="${module.jdk.classpath.team16_swd}"/>
+  </path>
+  
+  <path id="team16_swd.runtime.production.module.classpath">
+    <pathelement location="${team16_swd.output.dir}"/>
+  </path>
+  
+  <path id="team16_swd.module.classpath">
+    <path refid="${module.jdk.classpath.team16_swd}"/>
+    <pathelement location="${team16_swd.output.dir}"/>
+  </path>
+  
+  <path id="team16_swd.runtime.module.classpath">
+    <pathelement location="${team16_swd.testoutput.dir}"/>
+    <pathelement location="${team16_swd.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.team16_swd">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.team16_swd">
+    <patternset refid="excluded.from.module.team16_swd"/>
+  </patternset>
+  
+  
+  <target name="compile.module.team16_swd" depends="compile.module.team16_swd.production,compile.module.team16_swd.tests" description="Compile module team16_swd"/>
+  
+  <target name="compile.module.team16_swd.production" depends="register.custom.compilers" description="Compile module team16_swd; production classes"/>
+  
+  <target name="compile.module.team16_swd.tests" depends="register.custom.compilers,compile.module.team16_swd.production" description="compile module team16_swd; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.team16_swd" description="cleanup module">
+    <delete dir="${team16_swd.output.dir}"/>
+    <delete dir="${team16_swd.testoutput.dir}"/>
+  </target>
+</project>
