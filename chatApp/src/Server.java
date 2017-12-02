@@ -222,9 +222,9 @@ public class Server extends JFrame {
                 try // read message and display it
                 {
                     message = (String) input.readObject(); // read new message
-                    displayMessage("\n" + myConID + message); // display message
+                    displayMessage("\n" +  message); // display message //////////
 
-                    bWriter.write(myConID + " " + message);
+                    bWriter.write(message);
                     //bWriter.append(myConID + " " + message);
                     bWriter.newLine();
                 } // end try
