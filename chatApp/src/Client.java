@@ -20,6 +20,7 @@ public class Client extends JFrame {
     private String message = ""; // message from server
     private String chatServer; // host server for this application
     private Socket client; // socket to communicate with server
+    private String username = ""; //displayed username for client
 
     // initialize chatServer and set up GUI
     public Client(String host) {
@@ -33,8 +34,9 @@ public class Client extends JFrame {
                 new ActionListener() {
                     // send message to server
                     public void actionPerformed(ActionEvent event) {
-                        sendData(event.getActionCommand());
-                        enterField.setText("");
+                            sendData(event.getActionCommand());
+                            enterField.setText("");
+
                     } // end method actionPerformed
                 } // end anonymous inner class
         ); // end call to addActionListener
@@ -50,6 +52,8 @@ public class Client extends JFrame {
 
     // connect to server and process messages from server
     public void runClient() {
+
+        setUsername();
         try // connect to server, get streams, process connection
         {
             connectToServer(); // create a Socket to make connection
@@ -129,9 +133,9 @@ public class Client extends JFrame {
     private void sendData(String message) {
         try // send object to server
         {
-            output.writeObject("CLIENT>>> " + message);
+            output.writeObject(username+">>> " + message);
             output.flush(); // flush data to output
-            displayMessage("\nCLIENT>>> " + message);
+            displayMessage("\n"+username+">>> " + message);
         } // end try
         catch (IOException ioException) {
             displayArea.append("\nError writing object");
@@ -161,6 +165,12 @@ public class Client extends JFrame {
                 } // end anonymous inner class
         ); // end call to SwingUtilities.invokeLater
     } // end method setTextFieldEditable
+
+    private void setUsername() {
+        username = JOptionPane.showInputDialog(null,"What is your username?");
+        super.setTitle(username);
+        displayMessage("Your username is "+username+"\n");
+    }
 } // end class Client
 
 /**************************************************************************
