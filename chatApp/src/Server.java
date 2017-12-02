@@ -5,14 +5,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.EOFException;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.sql.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.io.IOException;
 
 public class Server extends JFrame {
     private JTextField enterField; // inputs message from user
@@ -22,10 +21,55 @@ public class Server extends JFrame {
     private SockServer[] sockServer; // Array of objects to be threaded
     private int counter = 1; // counter of number of connections
     private int nClientsActive = 0;
+    private static final String FILENAME = "savechat.txt";
+    private FileWriter fileWriter;
+    private BufferedWriter bWriter;
+    private BufferedReader bReader;
+
 
     // set up GUI
     public Server() {
         super("Server");
+        bWriter = null;
+        fileWriter = null;
+        try
+        {
+            File chatFile = new File(FILENAME);
+            if(!chatFile.exists())
+            {
+                chatFile.createNewFile();
+                fileWriter = new FileWriter(chatFile, false);
+            }
+            else
+            {
+                fileWriter = new FileWriter(chatFile, true);
+            }
+            bWriter = new BufferedWriter(fileWriter);
+        }
+        catch(IOException ex)
+        {
+            ex.printStackTrace();
+        }
+        try
+        {
+            bReader = new BufferedReader(new FileReader("savechat.txt"));
+            if(bReader.readLine() == null)//if the file is empty
+            {
+
+            }
+            else
+            {
+                while(bReader.readLine() != null)
+                {
+
+                }
+            }
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
+
 
         sockServer = new SockServer[100]; // allocate array for up to 100 server threads
         executor = Executors.newFixedThreadPool(100); // create thread pool
@@ -179,6 +223,10 @@ public class Server extends JFrame {
                 {
                     message = (String) input.readObject(); // read new message
                     displayMessage("\n" + myConID + message); // display message
+
+                    bWriter.write(myConID + " " + message);
+                    //bWriter.append(myConID + " " + message);
+                    bWriter.newLine();
                 } // end try
                 catch (ClassNotFoundException classNotFoundException) {
                     displayMessage("\nUnknown object type received");
@@ -200,6 +248,7 @@ public class Server extends JFrame {
                 output.close(); // close output stream
                 input.close(); // close input stream
                 connection.close(); // close socket
+                bWriter.close(); //closes writer
             } // end try
             catch (IOException ioException) {
                 ioException.printStackTrace();
@@ -217,10 +266,9 @@ public class Server extends JFrame {
                 displayArea.append("\nError writing object");
             } // end catch
         } // end method sendData
-
-
     } // end class SockServer
 } // end class Server
+
 
 /**************************************************************************
  * (C) Copyright 1992-2012 by Deitel & Associates, Inc. and               *

@@ -1,5 +1,6 @@
 // Fig. 27.6: ServerTest.java
 // Test the Server application.
+import java.util.Scanner;
 
 import javax.swing.*;
 
