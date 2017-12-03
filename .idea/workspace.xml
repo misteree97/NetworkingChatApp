@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1922993a-5992-4cc8-811f-917a490d7ca5" name="Default" comment="Server receivce message and pushes same message to all clients">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/production/chatApp/Client$1.class" afterPath="$PROJECT_DIR$/project/production/chatApp/Client$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/production/chatApp/Client$2.class" afterPath="$PROJECT_DIR$/project/production/chatApp/Client$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/production/chatApp/Client$3.class" afterPath="$PROJECT_DIR$/project/production/chatApp/Client$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/production/chatApp/Client.class" afterPath="$PROJECT_DIR$/project/production/chatApp/Client.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/production/chatApp/Server$SockServer.class" afterPath="$PROJECT_DIR$/project/production/chatApp/Server$SockServer.class" />
+    <list default="true" id="1922993a-5992-4cc8-811f-917a490d7ca5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chatApp/src/Client.java" afterPath="$PROJECT_DIR$/chatApp/src/Client.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chatApp/src/Server.java" afterPath="$PROJECT_DIR$/chatApp/src/Server.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/savechat.txt" afterPath="$PROJECT_DIR$/savechat.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -666,7 +658,7 @@
       <workItem from="1512167461812" duration="332000" />
       <workItem from="1512167808562" duration="2396000" />
       <workItem from="1512263166316" duration="1760000" />
-      <workItem from="1512265885806" duration="4016000" />
+      <workItem from="1512265885806" duration="4057000" />
     </task>
     <task id="LOCAL-00001" summary="Pizza time">
       <created>1512263442613</created>
@@ -682,11 +674,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512266461998</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="tab client's outgoing text">
+      <created>1512271140224</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1512271140224</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9488000" />
+    <option name="totallyTimeSpent" value="9529000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -757,7 +756,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Pizza time" />
     <MESSAGE value="Server receivce message and pushes same message to all clients" />
-    <option name="LAST_COMMIT_MESSAGE" value="Server receivce message and pushes same message to all clients" />
+    <MESSAGE value="tab client's outgoing text" />
+    <option name="LAST_COMMIT_MESSAGE" value="tab client's outgoing text" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
