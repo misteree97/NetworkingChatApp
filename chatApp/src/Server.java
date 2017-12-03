@@ -32,7 +32,6 @@ public class Server extends JFrame {
         super("Server");
         bWriter = null;
         fileWriter = null;
-        String strLine;
         try
         {
             File chatFile = new File(FILENAME);
@@ -51,6 +50,26 @@ public class Server extends JFrame {
         {
             ex.printStackTrace();
         }
+        try
+        {
+            bReader = new BufferedReader(new FileReader("savechat.txt"));
+            if(bReader.readLine() == null)//if the file is empty
+            {
+
+            }
+            else
+            {
+                while(bReader.readLine() != null)
+                {
+
+                }
+            }
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
+
 
         sockServer = new SockServer[100]; // allocate array for up to 100 server threads
         executor = Executors.newFixedThreadPool(100); // create thread pool
@@ -79,19 +98,6 @@ public class Server extends JFrame {
 
         setSize(300, 150); // set size of window
         setVisible(true); // show window
-        try
-        {
-            bReader = new BufferedReader(new FileReader("savechat.txt"));
-            while((strLine = bReader.readLine()) != null)
-            {
-                displayMessage(strLine + "\n");
-            }
-
-        }
-        catch(IOException e)
-        {
-            e.printStackTrace();
-        }
     } // end Server constructor
 
     // set up and run server
@@ -157,11 +163,10 @@ public class Server extends JFrame {
         private ObjectInputStream input; // input stream from client
         private Socket connection; // connection to client
         private int myConID;
-        private String myUserID;
         private boolean alive = false;
 
-        public SockServer(int num) {
-            myConID = num;
+        public SockServer(int counterIn) {
+            myConID = counterIn;
         }
 
         public void run() {
@@ -187,11 +192,10 @@ public class Server extends JFrame {
         // wait for connection to arrive, then display connection info
         private void waitForConnection() throws IOException {
 
-            displayMessage("Waiting for users" + "\n");
+            displayMessage("Waiting for connection" + myConID + "\n");
             connection = server.accept(); // allow server to accept connection
-            //displayMessage("\n Connection " + myConID + " received from: " +
-                    //connection.getInetAddress().getHostName());
-            displayMessage("Connection Received" + "\n");
+            displayMessage("Connection " + myConID + " received from: " +
+                    connection.getInetAddress().getHostName()+"\n");
         } // end method waitForConnection
 
         private void getStreams() throws IOException {
@@ -202,12 +206,12 @@ public class Server extends JFrame {
             // set up input stream for objects
             input = new ObjectInputStream(connection.getInputStream());
 
-            //displayMessage("\nGot I/O streams\n");
+            displayMessage("\nGot I/O streams\n");
         } // end method getStreams
 
         // process connection with client
         private void processConnection() throws IOException {
-            String message = "Connection successful";
+            String message = "Connection " + myConID + " successful";
             sendData(message); // send connection successful message
 
             // enable enterField so server user can send messages
@@ -221,13 +225,14 @@ public class Server extends JFrame {
                     displayMessage("\n" +  message); // display message //////////
 
                     bWriter.write(message);
+                    //bWriter.append(myConID + " " + message);
                     bWriter.newLine();
                 } // end try
                 catch (ClassNotFoundException classNotFoundException) {
                     displayMessage("\nUnknown object type received");
                 } // end catch
 
-            } while (!message.equals("CLIENT: TERMINATE"));
+            } while (!message.equals("CLIENT>>> TERMINATE"));
         } // end method processConnection
 
         // close streams and socket
@@ -253,9 +258,9 @@ public class Server extends JFrame {
         private void sendData(String message) {
             try // send object to client
             {
-                output.writeObject("SERVER" + myConID + ": " + message);
+                output.writeObject("SERVER" + myConID + ">>> " + message);
                 output.flush(); // flush output to client
-                displayMessage("\nSERVER" + myConID + ": " + message);
+                displayMessage("\nSERVER" + myConID + ">>> " + message);
             } // end try
             catch (IOException ioException) {
                 displayArea.append("\nError writing object");

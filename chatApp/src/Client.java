@@ -27,7 +27,6 @@ public class Client extends JFrame {
         super("Client");
 
         chatServer = host; // set server to which this client connects
-
         enterField = new JTextField(); // create enterField
         enterField.setEditable(false);
         enterField.addActionListener(
@@ -105,7 +104,8 @@ public class Client extends JFrame {
             try // read message and display it
             {
                 message = (String) input.readObject(); // read new message
-                displayMessage("\n" + message); // display message
+                displayMessage("\n" + message);// display message
+
             } // end try
             catch (ClassNotFoundException classNotFoundException) {
                 displayMessage("\nUnknown object type received");
@@ -171,6 +171,8 @@ public class Client extends JFrame {
         super.setTitle(username);
         displayMessage("Your username is "+username+"\n");
     }
+
+    public String getUsername(){ return username; }
 } // end class Client
 
 /**************************************************************************
