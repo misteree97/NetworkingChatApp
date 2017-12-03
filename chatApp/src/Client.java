@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import java.io.*;
 import java.net.InetAddress;
 import java.net.Socket;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Client extends JFrame {
     private JTextField enterField; // enters information from user
@@ -33,7 +34,18 @@ public class Client extends JFrame {
         fileWriter = null;
         String strLine;
 
-        img = new ImageIcon("C:\\Users\\Phili\\IdeaProjects\\team16_swd\\icons\\batmanIcon.png");
+        int randomNum = ThreadLocalRandom.current().nextInt(1, 4);
+        switch (randomNum)
+        {
+            case 1: img = new ImageIcon("C:\\Users\\Phili\\IdeaProjects\\team16_swd\\icons\\batmanIcon.png");
+                    break;
+
+            case 2: img = new ImageIcon("C:\\Users\\Phili\\IdeaProjects\\team16_swd\\icons\\ironmanIcon.png");
+                    break;
+
+            case 3: img = new ImageIcon("C:\\Users\\Phili\\IdeaProjects\\team16_swd\\icons\\decepticonsIcon.png");
+                    break;
+        }
         setIconImage(img.getImage());
 
         chatServer = host; // set server to which this client connects
@@ -203,11 +215,6 @@ public class Client extends JFrame {
         username = JOptionPane.showInputDialog(null,"What is your username?");
         super.setTitle(username);
         displayMessage("Your username is "+username+"\n");
-    }
-
-
-    public enum iconImage {
-        batman, ironman
     }
 
 } // end class Client
