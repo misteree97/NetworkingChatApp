@@ -27,14 +27,15 @@ public class Client extends JFrame {
         super("Client");
 
         chatServer = host; // set server to which this client connects
+
         enterField = new JTextField(); // create enterField
         enterField.setEditable(false);
         enterField.addActionListener(
                 new ActionListener() {
                     // send message to server
                     public void actionPerformed(ActionEvent event) {
-                            sendData(event.getActionCommand());
-                            enterField.setText("");
+                        sendData(event.getActionCommand());
+                        enterField.setText("");
 
                     } // end method actionPerformed
                 } // end anonymous inner class
@@ -104,8 +105,7 @@ public class Client extends JFrame {
             try // read message and display it
             {
                 message = (String) input.readObject(); // read new message
-                displayMessage("\n" + message);// display message
-
+                displayMessage("\n" + message); // display message
             } // end try
             catch (ClassNotFoundException classNotFoundException) {
                 displayMessage("\nUnknown object type received");
@@ -171,8 +171,6 @@ public class Client extends JFrame {
         super.setTitle(username);
         displayMessage("Your username is "+username+"\n");
     }
-
-    public String getUsername(){ return username; }
 } // end class Client
 
 /**************************************************************************
@@ -189,4 +187,3 @@ public class Client extends JFrame {
  * consequential damages in connection with, or arising out of, the       *
  * furnishing, performance, or use of these programs.                     *
  *************************************************************************/
-
