@@ -44,7 +44,7 @@ public class Client extends JFrame {
                 } // end anonymous inner class
         ); // end call to addActionListener
 
-        add(enterField, BorderLayout.NORTH);
+        add(enterField, BorderLayout.SOUTH);
 
         displayArea = new JTextArea(); // create displayArea
         add(new JScrollPane(displayArea), BorderLayout.CENTER);

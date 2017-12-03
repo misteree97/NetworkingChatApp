@@ -219,6 +219,10 @@ public class Server extends JFrame {
                 {
                     message = (String) input.readObject(); // read new message
                     displayMessage("\n" +  message); // display message //////////
+                    for (int i = 1; i <= counter; i++) {
+                        if (sockServer[i].alive == true)
+                            sockServer[i].sendData(message);
+                    }
 
                     bWriter.write(message);
                     bWriter.newLine();
