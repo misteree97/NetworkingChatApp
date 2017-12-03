@@ -92,7 +92,7 @@ public class Client extends JFrame {
         // set up input stream for objects
         input = new ObjectInputStream(client.getInputStream());
 
-        displayMessage("\nGot I/O streams\n");
+        //displayMessage("\nGot I/O streams\n");
     } // end method getStreams
 
     // process connection with server
@@ -111,7 +111,7 @@ public class Client extends JFrame {
                 displayMessage("\nUnknown object type received");
             } // end catch
 
-        } while (!message.equals("SERVER>>> TERMINATE"));
+        } while (!message.equals("SERVER: TERMINATE"));
     } // end method processConnection
 
     // close streams and socket
@@ -133,9 +133,9 @@ public class Client extends JFrame {
     private void sendData(String message) {
         try // send object to server
         {
-            output.writeObject(username+">>> " + message);
+            output.writeObject(username+": " + message);
             output.flush(); // flush data to output
-            displayMessage("\n"+username+">>> " + message);
+            displayMessage("\n"+username+": " + message);
         } // end try
         catch (IOException ioException) {
             displayArea.append("\nError writing object");
