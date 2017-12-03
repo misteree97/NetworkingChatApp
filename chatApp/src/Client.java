@@ -5,10 +5,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.EOFException;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.net.InetAddress;
 import java.net.Socket;
 
@@ -21,10 +18,16 @@ public class Client extends JFrame {
     private String chatServer; // host server for this application
     private Socket client; // socket to communicate with server
     private String username = ""; //displayed username for client
+    private FileWriter fileWriter;
+    private BufferedWriter bWriter;
+    private BufferedReader bReader;
 
     // initialize chatServer and set up GUI
     public Client(String host) {
         super("Client");
+        bWriter = null;
+        fileWriter = null;
+        String strLine;
 
         chatServer = host; // set server to which this client connects
 
@@ -48,6 +51,19 @@ public class Client extends JFrame {
 
         setSize(300, 150); // set size of window
         setVisible(true); // show window
+        try
+        {
+            bReader = new BufferedReader(new FileReader("savechat.txt"));
+            while((strLine = bReader.readLine()) != null)
+            {
+                displayMessage(strLine + "\n");
+            }
+
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
     } // end Client constructor
 
     // connect to server and process messages from server
