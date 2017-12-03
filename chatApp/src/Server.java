@@ -20,13 +20,15 @@ public class Server extends JFrame {
     private ServerSocket server; // server socket
     private SockServer[] sockServer; // Array of objects to be threaded
     private int counter = 1; // counter of number of connections
-    private int nClientsActive = 0;
-    private static final String FILENAME = "savechat.txt";
-    private FileWriter fileWriter;
+    private int nClientsActive = 0; // Number of clients connected
+    private static final String FILENAME = "savechat.txt"; // Name of the files to store history of the messages.
+    private FileWriter fileWriter; // Writes to the file.
     private BufferedWriter bWriter;
     private BufferedReader bReader;
     private JButton clearButton;
     private File chatFile;
+
+    private ImageIcon img;
 
 
     // set up GUI
@@ -35,6 +37,8 @@ public class Server extends JFrame {
         bWriter = null;
         fileWriter = null;
         String strLine;
+        img = new ImageIcon("C:\\Users\\Phili\\IdeaProjects\\team16_swd\\icons\\robotIcon.png");
+        setIconImage(img.getImage());
 
         try
         {

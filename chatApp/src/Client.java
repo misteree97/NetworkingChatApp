@@ -1,9 +1,6 @@
 // Fig. 27.7: Client.java
 // Client portion of a stream-socket connection between client and server.
 
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -27,12 +24,17 @@ public class Client extends JFrame {
     private BufferedWriter bWriter;
     private BufferedReader bReader;
 
+    private ImageIcon img; // Contains what image icon is going to be chosen.
+
     // initialize chatServer and set up GUI
     public Client(String host) {
         super("Client");
         bWriter = null;
         fileWriter = null;
         String strLine;
+
+        img = new ImageIcon("C:\\Users\\Phili\\IdeaProjects\\team16_swd\\icons\\batmanIcon.png");
+        setIconImage(img.getImage());
 
         chatServer = host; // set server to which this client connects
 
@@ -202,6 +204,12 @@ public class Client extends JFrame {
         super.setTitle(username);
         displayMessage("Your username is "+username+"\n");
     }
+
+
+    public enum iconImage {
+        batman, ironman
+    }
+
 } // end class Client
 
 /**************************************************************************
