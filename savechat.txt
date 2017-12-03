@@ -2,3 +2,8 @@ Jim: My name is Jim
 Bob: My Name is Bob
 blohr: EEEEEEEE
 blohr: 
+MGM: Hi
+JAM: HI
+ABC: Hi
+123: Hi to you
+ABC: What's up

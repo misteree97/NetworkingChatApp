@@ -257,9 +257,10 @@ public class Server extends JFrame {
         private void sendData(String message) {
             try // send object to client
             {
-                output.writeObject("SERVER" + myConID + ": " + message);
+                output.writeObject(message);
+                //output.writeObject("SERVER" + myConID + ": " + message);
                 output.flush(); // flush output to client
-                displayMessage("\nSERVER" + myConID + ": " + message);
+                //displayMessage("\nSERVER" + myConID + ": " + message);
             } // end try
             catch (IOException ioException) {
                 displayArea.append("\nError writing object");

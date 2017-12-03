@@ -11,10 +11,12 @@ import java.net.Socket;
 
 public class Client extends JFrame {
     private JTextField enterField; // enters information from user
+    //private JTextPane displayPane;
     private JTextArea displayArea; // display information to user
     private ObjectOutputStream output; // output stream to server
     private ObjectInputStream input; // input stream from server
-    private String message = ""; // message from server
+    private String messageOut = "";
+    private String messageIn = ""; // message from server
     private String chatServer; // host server for this application
     private Socket client; // socket to communicate with server
     private String username = ""; //displayed username for client
@@ -46,10 +48,14 @@ public class Client extends JFrame {
 
         add(enterField, BorderLayout.SOUTH);
 
+        //displayPane = new JTextPane();
+        //add(displayPane,BorderLayout.CENTER);
+
         displayArea = new JTextArea(); // create displayArea
         add(new JScrollPane(displayArea), BorderLayout.CENTER);
 
         setSize(300, 150); // set size of window
+
         setVisible(true); // show window
         try
         {
@@ -120,14 +126,20 @@ public class Client extends JFrame {
         {
             try // read message and display it
             {
-                message = (String) input.readObject(); // read new message
-                displayMessage("\n" + message); // display message
+                messageIn = (String) input.readObject();// read new message
+                if (!messageIn.equals(messageOut)){
+                    displayMessage("\n" + messageIn); // display message
+                    messageOut = "";
+                }
+                else {
+                    displayMessage("\n\t\t"+messageIn);
+                }
             } // end try
             catch (ClassNotFoundException classNotFoundException) {
                 displayMessage("\nUnknown object type received");
             } // end catch
 
-        } while (!message.equals("SERVER: TERMINATE"));
+        } while (!messageIn.equals("SERVER: TERMINATE"));
     } // end method processConnection
 
     // close streams and socket
@@ -149,9 +161,9 @@ public class Client extends JFrame {
     private void sendData(String message) {
         try // send object to server
         {
-            output.writeObject(username+": " + message);
+            messageOut = username+": "+message;
+            output.writeObject(messageOut);
             output.flush(); // flush data to output
-            displayMessage("\n"+username+": " + message);
         } // end try
         catch (IOException ioException) {
             displayArea.append("\nError writing object");
