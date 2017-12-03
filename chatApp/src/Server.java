@@ -288,8 +288,7 @@ public class Server extends JFrame {
             {
                 ex.printStackTrace();
             }
-            displayArea.setText("");
-
+            displayArea.setText(""); //sets server display to blank
         }
     }
 } // end class Server
