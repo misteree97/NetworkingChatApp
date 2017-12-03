@@ -25,6 +25,8 @@ public class Server extends JFrame {
     private FileWriter fileWriter;
     private BufferedWriter bWriter;
     private BufferedReader bReader;
+    private JButton clearButton;
+    private File chatFile;
 
 
     // set up GUI
@@ -33,9 +35,10 @@ public class Server extends JFrame {
         bWriter = null;
         fileWriter = null;
         String strLine;
+
         try
         {
-            File chatFile = new File(FILENAME);
+            chatFile = new File(FILENAME);
             if(!chatFile.exists())
             {
                 chatFile.createNewFile();
@@ -51,6 +54,8 @@ public class Server extends JFrame {
         {
             ex.printStackTrace();
         }
+        clearButton = new JButton("Clear");
+        clearButton.addActionListener(new ClearListener());
 
         sockServer = new SockServer[100]; // allocate array for up to 100 server threads
         executor = Executors.newFixedThreadPool(100); // create thread pool
@@ -72,12 +77,14 @@ public class Server extends JFrame {
                 } // end anonymous inner class
         ); // end call to addActionListener
 
-        add(enterField, BorderLayout.NORTH);
+        add(enterField, BorderLayout.SOUTH);
+        add(clearButton, BorderLayout.NORTH);
 
         displayArea = new JTextArea(); // create displayArea
         add(new JScrollPane(displayArea), BorderLayout.CENTER);
 
-        setSize(300, 150); // set size of window
+
+        setSize(300, 300); // set size of window
         setVisible(true); // show window
         try
         {
@@ -187,7 +194,7 @@ public class Server extends JFrame {
         // wait for connection to arrive, then display connection info
         private void waitForConnection() throws IOException {
 
-            displayMessage("Waiting for users" + "\n");
+            //displayMessage("Waiting for users" + "\n");
             connection = server.accept(); // allow server to accept connection
             //displayMessage("\n Connection " + myConID + " received from: " +
             //connection.getInetAddress().getHostName());
@@ -262,6 +269,25 @@ public class Server extends JFrame {
             } // end catch
         } // end method sendData
     } // end class SockServer
+    private class ClearListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            try
+            {
+                chatFile.createNewFile();
+                fileWriter = new FileWriter(chatFile, false);
+                bWriter = new BufferedWriter(fileWriter);
+                bWriter.write("");
+            }
+            catch(IOException ex)
+            {
+                ex.printStackTrace();
+            }
+            displayArea.setText("");
+
+        }
+    }
 } // end class Server
 
 
