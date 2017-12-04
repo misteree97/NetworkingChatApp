@@ -137,7 +137,9 @@ public class Server extends JFrame
         }
     } // end Server constructor
 
-    // set up and run server
+    /**
+     * Set up, and run server.
+     */
     public void runServer() {
         try // set up server to receive connections; process connections
         {
@@ -168,7 +170,10 @@ public class Server extends JFrame
         } // end catch
     } // end method runServer
 
-    // manipulates displayArea in the event-dispatch thread
+    /**
+     * Manipulates displayArea in the event-dispatch thread
+     * @param messageToDisplay is set to append displayArea.
+     */
     private void displayMessage(final String messageToDisplay) {
         SwingUtilities.invokeLater(
                 new Runnable() {
@@ -180,35 +185,30 @@ public class Server extends JFrame
         ); // end call to SwingUtilities.invokeLater
     } // end method displayMessage
 
-    /*
-    // manipulates enterField in the event-dispatch thread
-    private void setTextFieldEditable(final boolean editable) {
-        SwingUtilities.invokeLater(
-                new Runnable() {
-                    public void run() // sets enterField's editability
-                    {
-                        //enterField.setEditable(editable);
-                    } // end method run
-                }  // end inner class
-        ); // end call to SwingUtilities.invokeLater
-    } // end method setTextFieldEditable
-    */
-
-    /* This new Inner Class implements Runnable and objects instantiated from this
-     * class will become server threads each serving a different client
+    /**
+     * Private classes to have each socket thread runnable.
      */
     private class SockServer implements Runnable {
-        private ObjectOutputStream output; // output stream to client
-        private ObjectInputStream input; // input stream from client
-        private Socket connection; // connection to client
-        private int myConID;
-        private String myUserID;
+        /**
+         * output stream to client
+         */
+        private ObjectOutputStream output;
+        /**
+         * input stream from client
+         */
+        private ObjectInputStream input;
+        /**
+         * connection to client
+         */
+        private Socket connection;
+        /**
+         * Stores true if socket is currently connected.
+         */
         private boolean alive = false;
 
-        public SockServer(int num) {
-            myConID = num;
-        }
-
+        /**
+         * Checks, connects, and process the streams.
+         */
         public void run() {
             try {
                 alive = true;
@@ -229,35 +229,36 @@ public class Server extends JFrame
             } // end catch
         } // end try
 
-        // wait for connection to arrive, then display connection info
-        private void waitForConnection() throws IOException {
 
-            //displayMessage("Waiting for users" + "\n");
-            connection = server.accept(); // allow server to accept connection
-            //displayMessage("\n Connection " + myConID + " received from: " +
-            //connection.getInetAddress().getHostName());
-            //displayMessage("\nConnection Received");
+        /**
+         * Waits for connection to arrive, then display connection info
+         * @throws IOException if no connection can be accepted.
+         */
+        private void waitForConnection() throws IOException
+        {
+            connection = server.accept();
         } // end method waitForConnection
 
-        private void getStreams() throws IOException {
+        /**
+         * Checks to see if any stream objects can be accepted.
+         * @throws IOException is given if fails to set-up and see streams.
+         */
+        private void getStreams() throws IOException
+        {
             // set up output stream for objects
             output = new ObjectOutputStream(connection.getOutputStream());
             output.flush(); // flush output buffer to send header information
 
             // set up input stream for objects
             input = new ObjectInputStream(connection.getInputStream());
-
-            //displayMessage("\nGot I/O streams\n");
         } // end method getStreams
 
-        // process connection with client
+        /**
+         * Process connection with client
+         * @throws IOException is given if connection wasn't able to connect successfully.
+         */
         private void processConnection() throws IOException {
             String message = "Connection successful";
-            //sendData(message); // send connection successful message
-
-            // enable enterField so server user can send messages
-            //setTextFieldEditable(true);
-
             do // process messages sent from client
             {
                 try // read message and display it
@@ -284,18 +285,14 @@ public class Server extends JFrame
             } while (!message.contains("TERMINATE"));
         } // end method processConnection
 
-        // close streams and socket
-        private void closeConnection() {
-            //displayMessage("\nTerminating connection " + myConID + "\n");
-            //displayMessage("\nNumber of connections = " + nClientsActive + "\n");
+        /**
+         * Close streams and socket
+         */
+        private void closeConnection()
+        {
             alive = false;
-            /*
-            if (nClientsActive == 0) {
-                setTextFieldEditable(false); // disable enterField
-            }
-            */
-
-            try {
+            try
+            {
                 output.close(); // close output stream
                 input.close(); // close input stream
                 connection.close(); // close socket
@@ -306,8 +303,12 @@ public class Server extends JFrame
             } // end catch
         } // end method closeConnection
 
+        /**
+         * // Send object to client
+         * @param message is
+         */
         private void sendData(String message) {
-            try // send object to client
+            try
             {
                 output.writeObject(message);
                 //output.writeObject("SERVER" + myConID + ": " + message);
