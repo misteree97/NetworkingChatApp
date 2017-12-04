@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Server extends JFrame {
-    private JTextField enterField; // inputs message from user
+    //private JTextField enterField; // inputs message from user
     private JTextArea displayArea; // display information to user
     private ExecutorService executor; // will run players
     private ServerSocket server; // server socket
@@ -64,7 +64,7 @@ public class Server extends JFrame {
 
         sockServer = new SockServer[100]; // allocate array for up to 100 server threads
         executor = Executors.newFixedThreadPool(100); // create thread pool
-
+/*
         enterField = new JTextField(); // create enterField
         enterField.setEditable(false);
         enterField.addActionListener(
@@ -83,6 +83,7 @@ public class Server extends JFrame {
         ); // end call to addActionListener
 
         add(enterField, BorderLayout.SOUTH);
+        */
         add(clearButton, BorderLayout.NORTH);
 
         displayArea = new JTextArea(); // create displayArea
@@ -149,6 +150,7 @@ public class Server extends JFrame {
         ); // end call to SwingUtilities.invokeLater
     } // end method displayMessage
 
+    /*
     // manipulates enterField in the event-dispatch thread
     private void setTextFieldEditable(final boolean editable) {
         SwingUtilities.invokeLater(
@@ -160,6 +162,7 @@ public class Server extends JFrame {
                 }  // end inner class
         ); // end call to SwingUtilities.invokeLater
     } // end method setTextFieldEditable
+    */
 
     /* This new Inner Class implements Runnable and objects instantiated from this
      * class will become server threads each serving a different client
@@ -223,7 +226,7 @@ public class Server extends JFrame {
             sendData(message); // send connection successful message
 
             // enable enterField so server user can send messages
-            setTextFieldEditable(true);
+            //setTextFieldEditable(true);
 
             do // process messages sent from client
             {
@@ -256,10 +259,12 @@ public class Server extends JFrame {
             displayMessage("\nTerminating connection " + myConID + "\n");
             displayMessage("\nNumber of connections = " + nClientsActive + "\n");
             alive = false;
+            /*
             if (nClientsActive == 0) {
                 setTextFieldEditable(false); // disable enterField
             }
-
+            */
+            
             try {
                 output.close(); // close output stream
                 input.close(); // close input stream
