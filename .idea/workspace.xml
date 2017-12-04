@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1922993a-5992-4cc8-811f-917a490d7ca5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chatApp/src/Client.java" afterPath="$PROJECT_DIR$/chatApp/src/Client.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chatApp/src/Server.java" afterPath="$PROJECT_DIR$/chatApp/src/Server.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/savechat.txt" afterPath="$PROJECT_DIR$/savechat.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,9 +16,10 @@
       <file leaf-file-name="Server.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/chatApp/src/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="15" lean-forward="true" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+            <state relative-caret-position="493">
+              <caret line="29" column="58" lean-forward="false" selection-start-line="29" selection-start-column="58" selection-end-line="29" selection-end-column="58" />
               <folding>
+                <element signature="e#0#14524#0" expanded="true" />
                 <element signature="imports" expanded="true" />
                 <element signature="method#displayMessage#0;class#Server#0" expanded="false" />
                 <element signature="method#run#0;class#SockServer#0;class#Server#0" expanded="false" />
@@ -684,7 +682,7 @@
       <workItem from="1512263166316" duration="1760000" />
       <workItem from="1512265885806" duration="531000" />
       <workItem from="1512359108204" duration="11000" />
-      <workItem from="1512359365659" duration="954000" />
+      <workItem from="1512359365659" duration="1365000" />
     </task>
     <task id="LOCAL-00001" summary="Pizza time">
       <created>1512263442613</created>
@@ -704,7 +702,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11960000" />
+    <option name="totallyTimeSpent" value="12371000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -791,6 +789,7 @@
         <state relative-caret-position="183">
           <caret line="176" column="12" lean-forward="false" selection-start-line="176" selection-start-column="12" selection-end-line="176" selection-end-column="12" />
           <folding>
+            <element signature="e#0#14524#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="method#displayMessage#0;class#Server#0" expanded="false" />
             <element signature="method#run#0;class#SockServer#0;class#Server#0" expanded="false" />
@@ -816,6 +815,7 @@
         <state relative-caret-position="315">
           <caret line="32" column="8" lean-forward="true" selection-start-line="32" selection-start-column="8" selection-end-line="34" selection-end-column="23" />
           <folding>
+            <element signature="e#0#14524#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="method#displayMessage#0;class#Server#0" expanded="false" />
             <element signature="method#run#0;class#SockServer#0;class#Server#0" expanded="false" />
@@ -865,6 +865,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#0#14524#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="method#displayMessage#0;class#Server#0" expanded="false" />
             <element signature="method#run#0;class#SockServer#0;class#Server#0" expanded="false" />
@@ -959,6 +960,7 @@
         <state relative-caret-position="155">
           <caret line="290" column="67" lean-forward="false" selection-start-line="290" selection-start-column="67" selection-end-line="290" selection-end-column="67" />
           <folding>
+            <element signature="e#0#14524#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="method#displayMessage#0;class#Server#0" expanded="false" />
             <element signature="method#run#0;class#SockServer#0;class#Server#0" expanded="false" />
@@ -973,6 +975,7 @@
         <state relative-caret-position="315">
           <caret line="32" column="8" lean-forward="true" selection-start-line="32" selection-start-column="8" selection-end-line="34" selection-end-column="23" />
           <folding>
+            <element signature="e#0#14524#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="method#displayMessage#0;class#Server#0" expanded="false" />
             <element signature="method#run#0;class#SockServer#0;class#Server#0" expanded="false" />
@@ -1022,6 +1025,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#0#14524#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="method#displayMessage#0;class#Server#0" expanded="false" />
             <element signature="method#run#0;class#SockServer#0;class#Server#0" expanded="false" />
@@ -1125,9 +1129,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/chatApp/src/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="15" lean-forward="true" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+        <state relative-caret-position="493">
+          <caret line="29" column="58" lean-forward="false" selection-start-line="29" selection-start-column="58" selection-end-line="29" selection-end-column="58" />
           <folding>
+            <element signature="e#0#14524#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="method#displayMessage#0;class#Server#0" expanded="false" />
             <element signature="method#run#0;class#SockServer#0;class#Server#0" expanded="false" />

@@ -19,31 +19,75 @@ import java.awt.event.ActionListener;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.sql.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.io.IOException;
-import java.util.concurrent.ThreadLocalRandom;
 
-public class Server extends JFrame {
-    //private JTextField enterField; // inputs message from user
-    private JTextArea displayArea; // display information to user
-    private ExecutorService executor; // will run players
-    private ServerSocket server; // server socket
-    private SockServer[] sockServer; // Array of objects to be threaded
-    private int counter = 1; // counter of number of connections
-    private int nClientsActive = 0; // Number of clients connected
-    private static final String FILENAME = "savechat.txt"; // Name of the files to store history of the messages.
-    private FileWriter fileWriter; // Writes to the file.
+public class Server extends JFrame
+{
+    /**
+     * Name of the files to store history of the messages.
+     */
+    private static final String FILENAME = "savechat.txt";
+    /**
+     * display information to user
+     */
+    private JTextArea displayArea;
+    /**
+     * will run clients
+     */
+    private ExecutorService executor;
+    /**
+     * server socket
+     */
+    private ServerSocket server;
+    /**
+     * Array of objects to be threaded
+     */
+    private SockServer[] sockServer;
+    /**
+     * counter of number of connections
+     */
+    private int counter = 1;
+
+    /**
+     * Number of clients connected
+     */
+    private int nClientsActive = 0;
+
+    /**
+     * Writes to the file.
+     */
+    private FileWriter fileWriter;
+
+    /**
+     * Store write value
+     */
     private BufferedWriter bWriter;
+
+    /**
+     * Stores read value.
+     */
     private BufferedReader bReader;
+
+    /**
+     * Button to clear values.
+     */
     private JButton clearButton;
+
+    /**
+     * File where message history is saved.
+     */
     private File chatFile;
 
+    /**
+     * Variable to story reference to icon.
+     */
     private ImageIcon img;
 
 
-    // set up GUI
+    /**
+     * Creates, sets, and adds to gui.
+     */
     public Server() {
         super("Server");
         bWriter = null;
@@ -55,22 +99,17 @@ public class Server extends JFrame {
         /**
          * checks to see if a file to write to has been created, if not it will create one and set up the writer
          */
-        try
-        {
+        try {
             chatFile = new File(FILENAME);
-            if(!chatFile.exists()) //if the file doesn't exist
+            if (!chatFile.exists()) //if the file doesn't exist
             {
                 chatFile.createNewFile();
                 fileWriter = new FileWriter(chatFile, false); //will write to the beginning of the file
-            }
-            else
-            {
+            } else {
                 fileWriter = new FileWriter(chatFile, true);//will append to the end of the file
             }
             bWriter = new BufferedWriter(fileWriter);
-        }
-        catch(IOException ex)
-        {
+        } catch (IOException ex) {
             ex.printStackTrace();
         }
         clearButton = new JButton("Clear");
@@ -78,26 +117,6 @@ public class Server extends JFrame {
 
         sockServer = new SockServer[100]; // allocate array for up to 100 server threads
         executor = Executors.newFixedThreadPool(100); // create thread pool
-/*
-        enterField = new JTextField(); // create enterField
-        enterField.setEditable(false);
-        enterField.addActionListener(
-                new ActionListener() {
-                    // send message to client
-                    public void actionPerformed(ActionEvent event) {
-                        // Just got text from Server GUI Textfield
-                        // Now send this to each client -- broadcast mode
-                        for (int i = 1; i <= counter; i++) {
-                            if (sockServer[i].alive == true)
-                                sockServer[i].sendData(event.getActionCommand());
-                        }
-                        enterField.setText("");
-                    } // end method actionPerformed
-                } // end anonymous inner class
-        ); // end call to addActionListener
-
-        add(enterField, BorderLayout.SOUTH);
-        */
         add(clearButton, BorderLayout.NORTH);
 
         displayArea = new JTextArea(); // create displayArea
@@ -107,17 +126,13 @@ public class Server extends JFrame {
 
         setSize(300, 300); // set size of window
         setVisible(true); // show window
-        try
-        {
+        try {
             bReader = new BufferedReader(new FileReader("savechat.txt"));
-            while((strLine = bReader.readLine()) != null)
-            {
+            while ((strLine = bReader.readLine()) != null) {
                 displayMessage(strLine + "\n");
             }
 
-        }
-        catch(IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     } // end Server constructor
@@ -252,8 +267,7 @@ public class Server extends JFrame {
                     String temp = botInputProcess(message);
 
                     for (int i = 1; i <= counter; i++) {
-                        if (sockServer[i].alive == true)
-                        {
+                        if (sockServer[i].alive == true) {
                             sockServer[i].sendData(message);
                             sockServer[i].sendData(temp);
                         }
@@ -313,35 +327,24 @@ public class Server extends JFrame {
         }
         */
 
-        public String botInputProcess(String s)
-        {
+        public String botInputProcess(String s) {
             String msg = "";
             s = s.toLowerCase();
-            if(s.contains("hi") || s.contains("hello") || s.contains("hey"))
-            {
+            if (s.contains("hi") || s.contains("hello") || s.contains("hey")) {
                 displayMessage("\nAnnoying Chad: What up boss?\n");
                 msg = "Annoying Chad: What up boss?";
-            }
-            else if(s.contains("how are you"))
-            {
+            } else if (s.contains("how are you")) {
                 displayMessage("\nAnnoying Chad: I'm feeling good today.\n");
                 msg = "Annoying Chad: I'm feeling good today";
-            }
-            else
-            {
-                int decider = (int)(Math.random()*3+1);
-                if(decider ==1)
-                {
+            } else {
+                int decider = (int) (Math.random() * 3 + 1);
+                if (decider == 1) {
                     displayMessage("\nAnnoying Chad: Oh, interesting...\n");
                     msg = "\nAnnoying Chad: Oh, interesting...\n";
-                }
-                else if (decider ==2)
-                {
+                } else if (decider == 2) {
                     displayMessage("\nAnnoying Chad: Oh, I don't care.\n");
                     msg = "Annoying Chad: Oh, I really don't care.\n";
-                }
-                else
-                {
+                } else {
                     displayMessage("\nAnnoying Chad: What, sorry can you repeat that???\n");
                     msg = "Annoying Chad: What, sorry can you repeat that???\n";
                 }
@@ -352,12 +355,9 @@ public class Server extends JFrame {
 
     } // end class SockServer
 
-    private class ClearListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            try
-            {
+    private class ClearListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            try {
                 /**
                  * creates new file to write to
                  */
@@ -369,9 +369,7 @@ public class Server extends JFrame {
                 bWriter = new BufferedWriter(fileWriter);
 
                 bWriter.write("");
-            }
-            catch(IOException ex)
-            {
+            } catch (IOException ex) {
                 ex.printStackTrace();
             }
             displayArea.setText(""); //sets server display to blank
