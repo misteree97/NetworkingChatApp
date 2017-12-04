@@ -11,9 +11,7 @@
 // Fig. 27.7: Client.java
 // Client portion of a stream-socket connection between client and server.
 
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.UnsupportedAudioFileException;
+import javax.sound.sampled.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -70,6 +68,7 @@ public class Client extends JFrame {
                     public void actionPerformed(ActionEvent event) {
                         sendData(event.getActionCommand());
                         enterField.setText("");
+                        playSound("koolAidSound.wav");
 
                     } // end method actionPerformed
                 } // end anonymous inner class
@@ -233,11 +232,14 @@ public class Client extends JFrame {
         //displayMessage("Your username is "+username+"\n");
     }
 
-    private void playSound() {
-
+    private void playSound(String path) {
         try {
-            File audioFile = new File("koolAidSound.wav");
+            File audioFile = new File(path);
             AudioInputStream audioIn = AudioSystem.getAudioInputStream(audioFile);
+
+            Clip audioClip = AudioSystem.getClip();
+            audioClip.open(audioIn);
+            audioClip.start();
         }
         catch (UnsupportedAudioFileException exception){
             exception.printStackTrace();
@@ -245,9 +247,9 @@ public class Client extends JFrame {
         catch (IOException exception) {
             exception.printStackTrace();
         }
-
-
-
+        catch (LineUnavailableException exception) {
+            exception.printStackTrace();
+        }
     }
 
 } // end class Client

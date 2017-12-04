@@ -12,6 +12,7 @@
 // Modified Fig. 27.5: Multi-threaded Chat Server.java
 // Server portion of a client/server stream-socket connection. 
 
+import javax.sound.sampled.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -300,6 +301,7 @@ public class Server extends JFrame
                 input.close(); // close input stream
                 connection.close(); // close socket
                 bWriter.close(); //closes writer
+                playSound("Oh no sound effect (1).wav");
             } // end try
             catch (IOException ioException) {
                 ioException.printStackTrace();
@@ -373,6 +375,26 @@ public class Server extends JFrame
                 ex.printStackTrace();
             }
             displayArea.setText(""); //sets server display to blank
+        }
+    }
+
+    private void playSound(String path) {
+        try {
+            File audioFile = new File(path);
+            AudioInputStream audioIn = AudioSystem.getAudioInputStream(audioFile);
+
+            Clip audioClip = AudioSystem.getClip();
+            audioClip.open(audioIn);
+            audioClip.start();
+        }
+        catch (UnsupportedAudioFileException exception){
+            exception.printStackTrace();
+        }
+        catch (IOException exception) {
+            exception.printStackTrace();
+        }
+        catch (LineUnavailableException exception) {
+            exception.printStackTrace();
         }
     }
 
