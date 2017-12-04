@@ -20,15 +20,13 @@ public class Server extends JFrame {
     private ServerSocket server; // server socket
     private SockServer[] sockServer; // Array of objects to be threaded
     private int counter = 1; // counter of number of connections
-    private int nClientsActive = 0; // Number of clients connected
-    private static final String FILENAME = "savechat.txt"; // Name of the files to store history of the messages.
-    private FileWriter fileWriter; // Writes to the file.
+    private int nClientsActive = 0;
+    private static final String FILENAME = "savechat.txt";
+    private FileWriter fileWriter;
     private BufferedWriter bWriter;
     private BufferedReader bReader;
     private JButton clearButton;
     private File chatFile;
-
-    private ImageIcon img;
 
 
     // set up GUI
@@ -37,8 +35,6 @@ public class Server extends JFrame {
         bWriter = null;
         fileWriter = null;
         String strLine;
-        img = new ImageIcon("C:\\Users\\Phili\\IdeaProjects\\team16_swd\\icons\\robotIcon.png");
-        setIconImage(img.getImage());
 
         try
         {
@@ -202,7 +198,7 @@ public class Server extends JFrame {
             connection = server.accept(); // allow server to accept connection
             //displayMessage("\n Connection " + myConID + " received from: " +
             //connection.getInetAddress().getHostName());
-            displayMessage("Connection Received" + "\n");
+            displayMessage("\nConnection Received");
         } // end method waitForConnection
 
         private void getStreams() throws IOException {

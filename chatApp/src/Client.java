@@ -37,13 +37,13 @@ public class Client extends JFrame {
         int randomNum = ThreadLocalRandom.current().nextInt(1, 4);
         switch (randomNum)
         {
-            case 1: img = new ImageIcon("C:\\Users\\Phili\\IdeaProjects\\team16_swd\\icons\\batmanIcon.png");
+            case 1: img = new ImageIcon("icons/batmanIcon.png");
                     break;
 
-            case 2: img = new ImageIcon("C:\\Users\\Phili\\IdeaProjects\\team16_swd\\icons\\ironmanIcon.png");
+            case 2: img = new ImageIcon("icons/ironmanIcon.png");
                     break;
 
-            case 3: img = new ImageIcon("C:\\Users\\Phili\\IdeaProjects\\team16_swd\\icons\\decepticonsIcon.png");
+            case 3: img = new ImageIcon("icons/decepticonsIcon.png");
                     break;
         }
         setIconImage(img.getImage());
@@ -213,6 +213,12 @@ public class Client extends JFrame {
 
     private void setUsername() {
         username = JOptionPane.showInputDialog(null,"What is your username?");
+        if (username == null) {
+            System.exit(0); // cancel closes program
+        }
+        if (username == "") {
+
+        }
         super.setTitle(username);
         displayMessage("Your username is "+username+"\n");
     }
