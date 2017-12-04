@@ -68,7 +68,7 @@ public class Client extends JFrame {
         displayArea.setEditable(false);
         add(new JScrollPane(displayArea), BorderLayout.CENTER);
 
-        setSize(300, 150); // set size of window
+        setSize(300, 450); // set size of window
 
         setVisible(true); // show window
         try

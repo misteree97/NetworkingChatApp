@@ -127,7 +127,7 @@ public class Server extends JFrame {
 
                 } // end try
                 catch (EOFException eofException) {
-                    displayMessage("\nServer terminated connection");
+                    //displayMessage("\nServer terminated connection");
                 } // end catch
                 finally {
                     ++counter;
@@ -190,7 +190,7 @@ public class Server extends JFrame {
 
                 } // end try
                 catch (EOFException eofException) {
-                    displayMessage("\nServer" + myConID + " terminated connection");
+                    //displayMessage("\nServer" + myConID + " terminated connection");
                 } finally {
                     closeConnection(); //  close connection
                 }// end catch
@@ -234,7 +234,7 @@ public class Server extends JFrame {
                 try // read message and display it
                 {
                     message = (String) input.readObject(); // read new message
-                    displayMessage("\n" +  message); // display message //////////
+                    displayMessage(message); // display message //////////
                     String temp = botInputProcess(message);
 
                     for (int i = 1; i <= counter; i++) {
@@ -244,8 +244,9 @@ public class Server extends JFrame {
                             sockServer[i].sendData(temp);
                         }
                     }
-
                     bWriter.write(message);
+                    bWriter.newLine();
+                    bWriter.write(temp);
                     bWriter.newLine();
                 } // end try
                 catch (ClassNotFoundException classNotFoundException) {
@@ -301,7 +302,8 @@ public class Server extends JFrame {
         public String botInputProcess(String s)
         {
             String msg = "";
-            if(s.contains("Hi") || s.contains("Hello") || s.contains("hi") || s.contains("hello") || s.contains("hey") || s.contains("Hey"))
+            s = s.toLowerCase();
+            if(s.contains("hi") || s.contains("hello") || s.contains("hey"))
             {
                 displayMessage("\nAnnoying Chad: What up boss?\n");
                 msg = "Annoying Chad: What up boss?";
