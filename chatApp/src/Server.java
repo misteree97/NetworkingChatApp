@@ -234,12 +234,12 @@ public class Server extends JFrame {
                 {
                     message = (String) input.readObject(); // read new message
                     displayMessage("\n" +  message); // display message //////////
+                    String temp = botInputProcess(message);
 
                     for (int i = 1; i <= counter; i++) {
                         if (sockServer[i].alive == true)
                         {
                             sockServer[i].sendData(message);
-                            String temp = sockServer[i].botInputProcess(message);
                             sockServer[i].sendData(temp);
                         }
                     }
@@ -264,7 +264,7 @@ public class Server extends JFrame {
                 setTextFieldEditable(false); // disable enterField
             }
             */
-            
+
             try {
                 output.close(); // close output stream
                 input.close(); // close input stream
@@ -300,10 +300,15 @@ public class Server extends JFrame {
         public String botInputProcess(String s)
         {
             String msg = "";
-            if(s.contains("Hi") || s.contains("Hello") || s.contains("hi") || s.contains("hello"))
+            if(s.contains("Hi") || s.contains("Hello") || s.contains("hi") || s.contains("hello") || s.contains("hey") || s.contains("Hey"))
             {
                 displayMessage("\nAnnoying Chad: What up boss?\n");
                 msg = "Annoying Chad: What up boss?";
+            }
+            else if(s.contains("how are you"))
+            {
+                displayMessage("\nAnnoying Chad: I'm feeling good today.\n");
+                msg = "Annoying Chad: I'm feeling good today";
             }
             else
             {

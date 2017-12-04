@@ -12,7 +12,6 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Client extends JFrame {
     private JTextField enterField; // enters information from user
-    //private JTextPane displayPane;
     private JTextArea displayArea; // display information to user
     private ObjectOutputStream output; // output stream to server
     private ObjectInputStream input; // input stream from server
@@ -64,9 +63,6 @@ public class Client extends JFrame {
         ); // end call to addActionListener
 
         add(enterField, BorderLayout.SOUTH);
-
-        //displayPane = new JTextPane();
-        //add(displayPane,BorderLayout.CENTER);
 
         displayArea = new JTextArea(); // create displayArea
         add(new JScrollPane(displayArea), BorderLayout.CENTER);
