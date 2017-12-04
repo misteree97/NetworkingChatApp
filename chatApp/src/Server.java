@@ -12,6 +12,7 @@ import java.sql.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.io.IOException;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Server extends JFrame {
     private JTextField enterField; // inputs message from user
@@ -20,13 +21,15 @@ public class Server extends JFrame {
     private ServerSocket server; // server socket
     private SockServer[] sockServer; // Array of objects to be threaded
     private int counter = 1; // counter of number of connections
-    private int nClientsActive = 0;
-    private static final String FILENAME = "savechat.txt";
-    private FileWriter fileWriter;
+    private int nClientsActive = 0; // Number of clients connected
+    private static final String FILENAME = "savechat.txt"; // Name of the files to store history of the messages.
+    private FileWriter fileWriter; // Writes to the file.
     private BufferedWriter bWriter;
     private BufferedReader bReader;
     private JButton clearButton;
     private File chatFile;
+
+    private ImageIcon img;
 
 
     // set up GUI
@@ -35,6 +38,8 @@ public class Server extends JFrame {
         bWriter = null;
         fileWriter = null;
         String strLine;
+        img = new ImageIcon("icons/robotIcon.png");
+        setIconImage(img.getImage());
 
         try
         {
@@ -198,7 +203,7 @@ public class Server extends JFrame {
             connection = server.accept(); // allow server to accept connection
             //displayMessage("\n Connection " + myConID + " received from: " +
             //connection.getInetAddress().getHostName());
-            displayMessage("\nConnection Received");
+            displayMessage("Connection Received" + "\n");
         } // end method waitForConnection
 
         private void getStreams() throws IOException {
@@ -226,9 +231,14 @@ public class Server extends JFrame {
                 {
                     message = (String) input.readObject(); // read new message
                     displayMessage("\n" +  message); // display message //////////
+
                     for (int i = 1; i <= counter; i++) {
                         if (sockServer[i].alive == true)
+                        {
                             sockServer[i].sendData(message);
+                            String temp = sockServer[i].botInputProcess(message);
+                            sockServer[i].sendData(temp);
+                        }
                     }
 
                     bWriter.write(message);
@@ -273,6 +283,46 @@ public class Server extends JFrame {
                 displayArea.append("\nError writing object");
             } // end catch
         } // end method sendData
+
+        /*
+        public void botSay(String s)
+        {
+            displayMessage("\nAnnoying Chad: " + s + "\n");
+            sendData("Annoying Chad: " + s + "\n");
+        }
+        */
+
+        public String botInputProcess(String s)
+        {
+            String msg = "";
+            if(s.contains("Hi") || s.contains("Hello") || s.contains("hi") || s.contains("hello"))
+            {
+                displayMessage("\nAnnoying Chad: What up boss?\n");
+                msg = "Annoying Chad: What up boss?";
+            }
+            else
+            {
+                int decider = (int)(Math.random()*3+1);
+                if(decider ==1)
+                {
+                    displayMessage("\nAnnoying Chad: Oh, interesting...\n");
+                    msg = "\nAnnoying Chad: Oh, interesting...\n";
+                }
+                else if (decider ==2)
+                {
+                    displayMessage("\nAnnoying Chad: Oh, I don't care.\n");
+                    msg = "Annoying Chad: Oh, I really don't care.\n";
+                }
+                else
+                {
+                    displayMessage("\nAnnoying Chad: What, sorry can you repeat that???\n");
+                    msg = "Annoying Chad: What, sorry can you repeat that???\n";
+                }
+            }
+            return msg;
+        }
+
+
     } // end class SockServer
     private class ClearListener implements ActionListener
     {
@@ -292,6 +342,7 @@ public class Server extends JFrame {
             displayArea.setText(""); //sets server display to blank
         }
     }
+
 } // end class Server
 
 
