@@ -87,6 +87,7 @@ public class Server extends JFrame {
         add(clearButton, BorderLayout.NORTH);
 
         displayArea = new JTextArea(); // create displayArea
+        displayArea.setEditable(false);
         add(new JScrollPane(displayArea), BorderLayout.CENTER);
 
 
@@ -157,7 +158,7 @@ public class Server extends JFrame {
                 new Runnable() {
                     public void run() // sets enterField's editability
                     {
-                        enterField.setEditable(editable);
+                        //enterField.setEditable(editable);
                     } // end method run
                 }  // end inner class
         ); // end call to SwingUtilities.invokeLater
@@ -206,7 +207,7 @@ public class Server extends JFrame {
             connection = server.accept(); // allow server to accept connection
             //displayMessage("\n Connection " + myConID + " received from: " +
             //connection.getInetAddress().getHostName());
-            displayMessage("Connection Received" + "\n");
+            //displayMessage("\nConnection Received");
         } // end method waitForConnection
 
         private void getStreams() throws IOException {
@@ -223,7 +224,7 @@ public class Server extends JFrame {
         // process connection with client
         private void processConnection() throws IOException {
             String message = "Connection successful";
-            sendData(message); // send connection successful message
+            //sendData(message); // send connection successful message
 
             // enable enterField so server user can send messages
             //setTextFieldEditable(true);
@@ -251,13 +252,13 @@ public class Server extends JFrame {
                     displayMessage("\nUnknown object type received");
                 } // end catch
 
-            } while (!message.equals("CLIENT: TERMINATE"));
+            } while (!message.contains("TERMINATE"));
         } // end method processConnection
 
         // close streams and socket
         private void closeConnection() {
-            displayMessage("\nTerminating connection " + myConID + "\n");
-            displayMessage("\nNumber of connections = " + nClientsActive + "\n");
+            //displayMessage("\nTerminating connection " + myConID + "\n");
+            //displayMessage("\nNumber of connections = " + nClientsActive + "\n");
             alive = false;
             /*
             if (nClientsActive == 0) {
