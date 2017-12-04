@@ -2,18 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1922993a-5992-4cc8-811f-917a490d7ca5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Oh no sound effect (1).wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/youGotmail.wav" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/production/chatApp/Client$1.class" afterPath="$PROJECT_DIR$/project/production/chatApp/Client$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/production/chatApp/Client$2.class" afterPath="$PROJECT_DIR$/project/production/chatApp/Client$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/production/chatApp/Client$3.class" afterPath="$PROJECT_DIR$/project/production/chatApp/Client$3.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/production/chatApp/Client.class" afterPath="$PROJECT_DIR$/project/production/chatApp/Client.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/production/chatApp/Server$1.class" afterPath="$PROJECT_DIR$/project/production/chatApp/Server$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/production/chatApp/Server$ClearListener.class" afterPath="$PROJECT_DIR$/project/production/chatApp/Server$ClearListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/production/chatApp/Server$SockServer.class" afterPath="$PROJECT_DIR$/project/production/chatApp/Server$SockServer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/production/chatApp/Server.class" afterPath="$PROJECT_DIR$/project/production/chatApp/Server.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chatApp/src/Client.java" afterPath="$PROJECT_DIR$/chatApp/src/Client.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chatApp/src/Server.java" afterPath="$PROJECT_DIR$/chatApp/src/Server.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/savechat.txt" afterPath="$PROJECT_DIR$/savechat.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Server.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Server.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chatApp/src/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3570">
-              <caret line="303" column="53" lean-forward="false" selection-start-line="303" selection-start-column="53" selection-end-line="303" selection-end-column="53" />
+            <state relative-caret-position="-1888">
+              <caret line="50" column="28" lean-forward="true" selection-start-line="50" selection-start-column="28" selection-end-line="50" selection-end-column="28" />
               <folding>
                 <element signature="e#0#15236#0" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -48,18 +43,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Client.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Client.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/chatApp/src/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
-              <caret line="252" column="5" lean-forward="true" selection-start-line="234" selection-start-column="4" selection-end-line="252" selection-end-column="5" />
+            <state relative-caret-position="1088">
+              <caret line="98" column="19" lean-forward="false" selection-start-line="98" selection-start-column="13" selection-end-line="98" selection-end-column="19" />
               <folding>
-                <element signature="e#0#10323#0" expanded="true" />
-                <marker date="1512362630486" expanded="false" signature="5281:6104" ph="{...}" />
-                <marker date="1512362630486" expanded="false" signature="6205:6607" ph="{...}" />
-                <marker date="1512362630486" expanded="false" signature="6711:7053" ph="{...}" />
-                <marker date="1512362630486" expanded="false" signature="7201:7563" ph="{...}" />
-                <marker date="1512362630486" expanded="false" signature="7715:8082" ph="{...}" />
+                <element signature="e#0#10376#0" expanded="true" />
+                <element signature="method#closeConnection#0;class#Client#0" expanded="false" />
+                <element signature="method#sendData#0;class#Client#0" expanded="false" />
+                <element signature="method#displayMessage#0;class#Client#0" expanded="false" />
+                <marker date="1512363825263" expanded="false" signature="7768:8135" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -104,6 +98,7 @@
       <find>bReader</find>
       <find>input</find>
       <find>terminat</find>
+      <find>playSound</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -125,8 +120,8 @@
         <option value="$PROJECT_DIR$/chatApp/src/ClientTest.java" />
         <option value="$PROJECT_DIR$/chatApp/src/ServerTest.java" />
         <option value="$PROJECT_DIR$/savechat.txt" />
-        <option value="$PROJECT_DIR$/chatApp/src/Client.java" />
         <option value="$PROJECT_DIR$/chatApp/src/Server.java" />
+        <option value="$PROJECT_DIR$/chatApp/src/Client.java" />
       </list>
     </option>
   </component>
@@ -705,15 +700,21 @@
       <option name="project" value="LOCAL" />
       <updated>1512361722050</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added playsound()">
+      <created>1512362742929</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1512362742929</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12035000" />
+    <option name="totallyTimeSpent" value="13236000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -728,7 +729,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2360515" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2360515" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -755,7 +756,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Pizza time" />
     <MESSAGE value="JOptionPane cancel button" />
-    <option name="LAST_COMMIT_MESSAGE" value="JOptionPane cancel button" />
+    <MESSAGE value="Added playsound()" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added playsound()" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -772,12 +774,11 @@
         <state relative-caret-position="85">
           <caret line="6" column="36" lean-forward="false" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="36" />
           <folding>
-            <element signature="e#0#10323#0" expanded="true" />
-            <marker date="1512362630486" expanded="false" signature="5281:6104" ph="{...}" />
-            <marker date="1512362630486" expanded="false" signature="6205:6607" ph="{...}" />
-            <marker date="1512362630486" expanded="false" signature="6711:7053" ph="{...}" />
-            <marker date="1512362630486" expanded="false" signature="7201:7563" ph="{...}" />
-            <marker date="1512362630486" expanded="false" signature="7715:8082" ph="{...}" />
+            <element signature="e#0#10376#0" expanded="true" />
+            <element signature="method#closeConnection#0;class#Client#0" expanded="false" />
+            <element signature="method#sendData#0;class#Client#0" expanded="false" />
+            <element signature="method#displayMessage#0;class#Client#0" expanded="false" />
+            <marker date="1512363825263" expanded="false" signature="7768:8135" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -871,12 +872,11 @@
         <state relative-caret-position="330">
           <caret line="29" column="23" lean-forward="false" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
           <folding>
-            <element signature="e#0#10323#0" expanded="true" />
-            <marker date="1512362630486" expanded="false" signature="5281:6104" ph="{...}" />
-            <marker date="1512362630486" expanded="false" signature="6205:6607" ph="{...}" />
-            <marker date="1512362630486" expanded="false" signature="6711:7053" ph="{...}" />
-            <marker date="1512362630486" expanded="false" signature="7201:7563" ph="{...}" />
-            <marker date="1512362630486" expanded="false" signature="7715:8082" ph="{...}" />
+            <element signature="e#0#10376#0" expanded="true" />
+            <element signature="method#closeConnection#0;class#Client#0" expanded="false" />
+            <element signature="method#sendData#0;class#Client#0" expanded="false" />
+            <element signature="method#displayMessage#0;class#Client#0" expanded="false" />
+            <marker date="1512363825263" expanded="false" signature="7768:8135" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -907,12 +907,11 @@
         <state relative-caret-position="2873">
           <caret line="179" column="0" lean-forward="false" selection-start-line="179" selection-start-column="0" selection-end-line="179" selection-end-column="0" />
           <folding>
-            <element signature="e#0#10323#0" expanded="true" />
-            <marker date="1512362630486" expanded="false" signature="5281:6104" ph="{...}" />
-            <marker date="1512362630486" expanded="false" signature="6205:6607" ph="{...}" />
-            <marker date="1512362630486" expanded="false" signature="6711:7053" ph="{...}" />
-            <marker date="1512362630486" expanded="false" signature="7201:7563" ph="{...}" />
-            <marker date="1512362630486" expanded="false" signature="7715:8082" ph="{...}" />
+            <element signature="e#0#10376#0" expanded="true" />
+            <element signature="method#closeConnection#0;class#Client#0" expanded="false" />
+            <element signature="method#sendData#0;class#Client#0" expanded="false" />
+            <element signature="method#displayMessage#0;class#Client#0" expanded="false" />
+            <marker date="1512363825263" expanded="false" signature="7768:8135" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -974,12 +973,11 @@
         <state relative-caret-position="85">
           <caret line="6" column="36" lean-forward="false" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="36" />
           <folding>
-            <element signature="e#0#10323#0" expanded="true" />
-            <marker date="1512362630486" expanded="false" signature="5281:6104" ph="{...}" />
-            <marker date="1512362630486" expanded="false" signature="6205:6607" ph="{...}" />
-            <marker date="1512362630486" expanded="false" signature="6711:7053" ph="{...}" />
-            <marker date="1512362630486" expanded="false" signature="7201:7563" ph="{...}" />
-            <marker date="1512362630486" expanded="false" signature="7715:8082" ph="{...}" />
+            <element signature="e#0#10376#0" expanded="true" />
+            <element signature="method#closeConnection#0;class#Client#0" expanded="false" />
+            <element signature="method#sendData#0;class#Client#0" expanded="false" />
+            <element signature="method#displayMessage#0;class#Client#0" expanded="false" />
+            <marker date="1512363825263" expanded="false" signature="7768:8135" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1052,12 +1050,11 @@
         <state relative-caret-position="330">
           <caret line="29" column="23" lean-forward="false" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
           <folding>
-            <element signature="e#0#10323#0" expanded="true" />
-            <marker date="1512362630486" expanded="false" signature="5281:6104" ph="{...}" />
-            <marker date="1512362630486" expanded="false" signature="6205:6607" ph="{...}" />
-            <marker date="1512362630486" expanded="false" signature="6711:7053" ph="{...}" />
-            <marker date="1512362630486" expanded="false" signature="7201:7563" ph="{...}" />
-            <marker date="1512362630486" expanded="false" signature="7715:8082" ph="{...}" />
+            <element signature="e#0#10376#0" expanded="true" />
+            <element signature="method#closeConnection#0;class#Client#0" expanded="false" />
+            <element signature="method#sendData#0;class#Client#0" expanded="false" />
+            <element signature="method#displayMessage#0;class#Client#0" expanded="false" />
+            <marker date="1512363825263" expanded="false" signature="7768:8135" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1088,12 +1085,11 @@
         <state relative-caret-position="2873">
           <caret line="179" column="0" lean-forward="false" selection-start-line="179" selection-start-column="0" selection-end-line="179" selection-end-column="0" />
           <folding>
-            <element signature="e#0#10323#0" expanded="true" />
-            <marker date="1512362630486" expanded="false" signature="5281:6104" ph="{...}" />
-            <marker date="1512362630486" expanded="false" signature="6205:6607" ph="{...}" />
-            <marker date="1512362630486" expanded="false" signature="6711:7053" ph="{...}" />
-            <marker date="1512362630486" expanded="false" signature="7201:7563" ph="{...}" />
-            <marker date="1512362630486" expanded="false" signature="7715:8082" ph="{...}" />
+            <element signature="e#0#10376#0" expanded="true" />
+            <element signature="method#closeConnection#0;class#Client#0" expanded="false" />
+            <element signature="method#sendData#0;class#Client#0" expanded="false" />
+            <element signature="method#displayMessage#0;class#Client#0" expanded="false" />
+            <marker date="1512363825263" expanded="false" signature="7768:8135" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1162,25 +1158,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chatApp/src/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="252" column="5" lean-forward="true" selection-start-line="234" selection-start-column="4" selection-end-line="252" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#10323#0" expanded="true" />
-            <marker date="1512362630486" expanded="false" signature="5281:6104" ph="{...}" />
-            <marker date="1512362630486" expanded="false" signature="6205:6607" ph="{...}" />
-            <marker date="1512362630486" expanded="false" signature="6711:7053" ph="{...}" />
-            <marker date="1512362630486" expanded="false" signature="7201:7563" ph="{...}" />
-            <marker date="1512362630486" expanded="false" signature="7715:8082" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/chatApp/src/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3570">
-          <caret line="303" column="53" lean-forward="false" selection-start-line="303" selection-start-column="53" selection-end-line="303" selection-end-column="53" />
+        <state relative-caret-position="-1888">
+          <caret line="50" column="28" lean-forward="true" selection-start-line="50" selection-start-column="28" selection-end-line="50" selection-end-column="28" />
           <folding>
             <element signature="e#0#15236#0" expanded="true" />
             <element signature="imports" expanded="true" />
@@ -1194,6 +1175,20 @@
             <element signature="method#sendData#0;class#SockServer#0;class#Server#0" expanded="false" />
             <element signature="method#botInputProcess#0;class#SockServer#0;class#Server#0" expanded="false" />
             <element signature="class#ClearListener#0;class#Server#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chatApp/src/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1088">
+          <caret line="98" column="19" lean-forward="false" selection-start-line="98" selection-start-column="13" selection-end-line="98" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#10376#0" expanded="true" />
+            <element signature="method#closeConnection#0;class#Client#0" expanded="false" />
+            <element signature="method#sendData#0;class#Client#0" expanded="false" />
+            <element signature="method#displayMessage#0;class#Client#0" expanded="false" />
+            <marker date="1512363825263" expanded="false" signature="7768:8135" ph="{...}" />
           </folding>
         </state>
       </provider>

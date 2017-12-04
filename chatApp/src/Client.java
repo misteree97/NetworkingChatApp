@@ -68,7 +68,7 @@ public class Client extends JFrame {
                     public void actionPerformed(ActionEvent event) {
                         sendData(event.getActionCommand());
                         enterField.setText("");
-                        playSound("koolAidSound.wav");
+                        //playSound("koolAidSound.wav");
 
                     } // end method actionPerformed
                 } // end anonymous inner class
@@ -154,6 +154,7 @@ public class Client extends JFrame {
                 messageIn = (String) input.readObject();// read new message
                 if (!messageIn.equals(messageOut)){
                     displayMessage("\n" + messageIn); // display message
+                    playSound("koolAidSound.wav");
                     messageOut = "";
                 }
                 else {
