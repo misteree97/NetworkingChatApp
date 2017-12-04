@@ -69,6 +69,7 @@ public class Client extends JFrame {
         //add(displayPane,BorderLayout.CENTER);
 
         displayArea = new JTextArea(); // create displayArea
+        displayArea.setEditable(false);
         add(new JScrollPane(displayArea), BorderLayout.CENTER);
 
         setSize(300, 150); // set size of window
@@ -112,14 +113,13 @@ public class Client extends JFrame {
 
     // connect to server
     private void connectToServer() throws IOException {
-        displayMessage("Attempting connection\n");
+        //displayMessage("Attempting connection\n");
 
         // create Socket to make connection to server
         client = new Socket(InetAddress.getByName(chatServer), 23555);
 
         // display connection information
-        displayMessage("Connected to: " +
-                client.getInetAddress().getHostName());
+        //displayMessage("Connected to: " +client.getInetAddress().getHostName());
     } // end method connectToServer
 
     // get streams to send and receive data
