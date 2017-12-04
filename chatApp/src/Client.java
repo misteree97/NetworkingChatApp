@@ -216,11 +216,12 @@ public class Client extends JFrame {
         if (username == null) {
             System.exit(0); // cancel closes program
         }
-        if (username == "") {
-
+        else if (username.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "You need a username", "Error",JOptionPane.ERROR_MESSAGE);
+            setUsername();
         }
         super.setTitle(username);
-        displayMessage("Your username is "+username+"\n");
+        //displayMessage("Your username is "+username+"\n");
     }
 
 } // end class Client
