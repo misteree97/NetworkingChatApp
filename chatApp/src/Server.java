@@ -1,3 +1,14 @@
+/***************************************************************************************
+ *    Title: Fig 28.4
+ *    Author: Java How to Program (early objects) 10th Edition
+ *    Date: 03 December 2017
+ *    Code version: 10th Edition
+ *    Availability: Chapter 28, Fig 28.4
+ *
+ *    Took this code from the textbook, and modified it to open a text file.
+ *
+ ***************************************************************************************/
+
 // Modified Fig. 27.5: Multi-threaded Chat Server.java
 // Server portion of a client/server stream-socket connection. 
 
@@ -41,17 +52,20 @@ public class Server extends JFrame {
         img = new ImageIcon("icons/robotIcon.png");
         setIconImage(img.getImage());
 
+        /**
+         * checks to see if a file to write to has been created, if not it will create one and set up the writer
+         */
         try
         {
             chatFile = new File(FILENAME);
-            if(!chatFile.exists())
+            if(!chatFile.exists()) //if the file doesn't exist
             {
                 chatFile.createNewFile();
-                fileWriter = new FileWriter(chatFile, false);
+                fileWriter = new FileWriter(chatFile, false); //will write to the beginning of the file
             }
             else
             {
-                fileWriter = new FileWriter(chatFile, true);
+                fileWriter = new FileWriter(chatFile, true);//will append to the end of the file
             }
             bWriter = new BufferedWriter(fileWriter);
         }
@@ -337,15 +351,23 @@ public class Server extends JFrame {
 
 
     } // end class SockServer
+
     private class ClearListener implements ActionListener
     {
         public void actionPerformed(ActionEvent e)
         {
             try
             {
+                /**
+                 * creates new file to write to
+                 */
                 chatFile.createNewFile();
+                /**
+                 * sets up fileWriter to write to the new file
+                 */
                 fileWriter = new FileWriter(chatFile, false);
                 bWriter = new BufferedWriter(fileWriter);
+
                 bWriter.write("");
             }
             catch(IOException ex)

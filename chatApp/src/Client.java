@@ -1,3 +1,13 @@
+/***************************************************************************************
+ *    Title: Fig 28.4
+ *    Author: Java How to Program (early objects) 10th Edition
+ *    Date: 03 December 2017
+ *    Code version: 10th Edition
+ *    Availability: Chapter 28, Fig 28.4
+ *    Took this code from the textbook, and modified it to open a text file.
+ *
+ ***************************************************************************************/
+
 // Fig. 27.7: Client.java
 // Client portion of a stream-socket connection between client and server.
 
