@@ -21,23 +21,65 @@ import java.net.InetAddress;
 import java.net.Socket;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Client extends JFrame {
-    private JTextField enterField; // enters information from user
-    private JTextArea displayArea; // display information to user
-    private ObjectOutputStream output; // output stream to server
-    private ObjectInputStream input; // input stream from server
+public class Client extends JFrame
+{
+    /**
+     * enters information from user
+     */
+    private JTextField enterField;
+    /**
+     * display information to user
+     */
+    private JTextArea displayArea;
+    /**
+     * output stream to server
+     */
+    private ObjectOutputStream output;
+    /**
+     * input stream from server
+     */
+    private ObjectInputStream input;
+    /**
+     * String message that is sent.
+     */
     private String messageOut = "";
-    private String messageIn = ""; // message from server
-    private String chatServer; // host server for this application
-    private Socket client; // socket to communicate with server
-    private String username = ""; //displayed username for client
+    /**
+     * String message from server.
+     */
+    private String messageIn = "";
+    /**
+     * host server for this application
+     */
+    private String chatServer;
+    /**
+     * socket to communicate with server.
+     */
+    private Socket client;
+    /**
+     * displayed username for client
+     */
+    private String username = "";
+    /**
+     * Variable to write to file.
+     */
     private FileWriter fileWriter;
+    /**
+     * Variable to hold writer.
+     */
     private BufferedWriter bWriter;
+    /**
+     * Variable to hold read-in String from file.
+     */
     private BufferedReader bReader;
+    /**
+     * Contains what image icon is going to be chosen.
+     */
+    private ImageIcon img;
 
-    private ImageIcon img; // Contains what image icon is going to be chosen.
-
-    // initialize chatServer and set up GUI
+    /**
+     * initialize chatServer and set up GUI
+     * @param host hold the reference to other clients.
+     */
     public Client(String host) {
         super("Client");
         bWriter = null;
@@ -98,7 +140,9 @@ public class Client extends JFrame {
         }
     } // end Client constructor
 
-    // connect to server and process messages from server
+    /**
+     * connect to server and process messages from server
+     */
     public void runClient() {
 
         setUsername();
@@ -119,18 +163,19 @@ public class Client extends JFrame {
         } // end finally
     } // end method runClient
 
-    // connect to server
+    /**
+     * connect to server
+     * @throws IOException when connection fails.
+     */
     private void connectToServer() throws IOException {
-        //displayMessage("Attempting connection\n");
-
         // create Socket to make connection to server
         client = new Socket(InetAddress.getByName(chatServer), 23555);
-
-        // display connection information
-        //displayMessage("Connected to: " +client.getInetAddress().getHostName());
     } // end method connectToServer
 
-    // get streams to send and receive data
+    /**
+     * get streams to send and receive data
+     * @throws IOException if failed to receive streams.
+     */
     private void getStreams() throws IOException {
         // set up output stream for objects
         output = new ObjectOutputStream(client.getOutputStream());
@@ -138,11 +183,12 @@ public class Client extends JFrame {
 
         // set up input stream for objects
         input = new ObjectInputStream(client.getInputStream());
-
-        //displayMessage("\nGot I/O streams\n");
     } // end method getStreams
 
-    // process connection with server
+    /**
+     * process connection with server
+     * @throws IOException if connections fail to process.
+     */
     private void processConnection() throws IOException {
         // enable enterField so client user can send messages
         setTextFieldEditable(true);
@@ -168,7 +214,9 @@ public class Client extends JFrame {
         } while (!messageIn.equals("SERVER: TERMINATE"));
     } // end method processConnection
 
-    // close streams and socket
+    /**
+     * close streams and socket
+     */
     private void closeConnection() {
         displayMessage("\nClosing connection");
         setTextFieldEditable(false); // disable enterField
@@ -183,7 +231,10 @@ public class Client extends JFrame {
         } // end catch
     } // end method closeConnection
 
-    // send message to server
+    /**
+     * send message to server
+     * @param message is sent to server.
+     */
     private void sendData(String message) {
         try // send object to server
         {
@@ -196,7 +247,10 @@ public class Client extends JFrame {
         } // end catch
     } // end method sendData
 
-    // manipulates displayArea in the event-dispatch thread
+    /**
+     * manipulates displayArea in the event-dispatch thread
+     * @param messageToDisplay appends displayArea.
+     */
     private void displayMessage(final String messageToDisplay) {
         SwingUtilities.invokeLater(
                 new Runnable() {
@@ -208,7 +262,10 @@ public class Client extends JFrame {
         ); // end call to SwingUtilities.invokeLater
     } // end method displayMessage
 
-    // manipulates enterField in the event-dispatch thread
+    /**
+     * manipulates enterField in the event-dispatch thread
+     * @param editable makes the field editable.
+     */
     private void setTextFieldEditable(final boolean editable) {
         SwingUtilities.invokeLater(
                 new Runnable() {
@@ -220,6 +277,9 @@ public class Client extends JFrame {
         ); // end call to SwingUtilities.invokeLater
     } // end method setTextFieldEditable
 
+    /**
+     * Stores the user name inputted from user.
+     */
     private void setUsername() {
         username = JOptionPane.showInputDialog(null,"What is your username?");
         if (username == null) {
@@ -254,18 +314,3 @@ public class Client extends JFrame {
     }
 
 } // end class Client
-
-/**************************************************************************
- * (C) Copyright 1992-2012 by Deitel & Associates, Inc. and               *
- * Pearson Education, Inc. All Rights Reserved.                           *
- *                                                                        *
- * DISCLAIMER: The authors and publisher of this book have used their     *
- * best efforts in preparing the book. These efforts include the          *
- * development, research, and testing of the theories and programs        *
- * to determine their effectiveness. The authors and publisher make       *
- * no warranty of any kind, expressed or implied, with regard to these    *
- * programs or to the documentation contained in these books. The authors *
- * and publisher shall not be liable in any event for incidental or       *
- * consequential damages in connection with, or arising out of, the       *
- * furnishing, performance, or use of these programs.                     *
- *************************************************************************/
