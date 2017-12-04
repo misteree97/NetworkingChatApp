@@ -293,6 +293,10 @@ public class Client extends JFrame
         //displayMessage("Your username is "+username+"\n");
     }
 
+    /**
+     * play audio file
+     * @param path is the path to the audio file on the machine
+     */
     private void playSound(String path) {
         try {
             File audioFile = new File(path);
