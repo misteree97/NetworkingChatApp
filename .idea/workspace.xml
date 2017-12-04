@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1922993a-5992-4cc8-811f-917a490d7ca5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/production/chatApp/Client.class" afterPath="$PROJECT_DIR$/project/production/chatApp/Client.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/production/chatApp/Server$1.class" afterPath="$PROJECT_DIR$/project/production/chatApp/Server$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/production/chatApp/Server$ClearListener.class" afterPath="$PROJECT_DIR$/project/production/chatApp/Server$ClearListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/production/chatApp/Server$SockServer.class" afterPath="$PROJECT_DIR$/project/production/chatApp/Server$SockServer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/production/chatApp/Server.class" afterPath="$PROJECT_DIR$/project/production/chatApp/Server.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chatApp/src/Client.java" afterPath="$PROJECT_DIR$/chatApp/src/Client.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chatApp/src/Server.java" afterPath="$PROJECT_DIR$/chatApp/src/Server.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/savechat.txt" afterPath="$PROJECT_DIR$/savechat.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,16 +16,13 @@
       <file leaf-file-name="Server.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chatApp/src/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1770">
-              <caret line="236" column="35" lean-forward="false" selection-start-line="236" selection-start-column="35" selection-end-line="236" selection-end-column="35" />
+            <state relative-caret-position="763">
+              <caret line="265" column="35" lean-forward="false" selection-start-line="265" selection-start-column="35" selection-end-line="265" selection-end-column="35" />
               <folding>
-                <element signature="e#0#14545#0" expanded="true" />
+                <element signature="e#0#14524#0" expanded="true" />
                 <element signature="imports" expanded="true" />
-                <element signature="method#Server#0;class#Server#0" expanded="false" />
-                <element signature="method#displayMessage#0;class#Server#0" expanded="false" />
-                <element signature="method#run#0;class#SockServer#0;class#Server#0" expanded="false" />
-                <element signature="method#waitForConnection#0;class#SockServer#0;class#Server#0" expanded="false" />
-                <element signature="method#getStreams#0;class#SockServer#0;class#Server#0" expanded="false" />
+                <element signature="e#6752#6753#0" expanded="true" />
+                <element signature="e#6789#6790#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -42,15 +31,15 @@
       <file leaf-file-name="Client.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/chatApp/src/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-900">
-              <caret line="70" column="22" lean-forward="false" selection-start-line="70" selection-start-column="22" selection-end-line="70" selection-end-column="22" />
+            <state relative-caret-position="345">
+              <caret line="245" column="40" lean-forward="true" selection-start-line="245" selection-start-column="40" selection-end-line="245" selection-end-column="40" />
               <folding>
-                <element signature="e#0#9165#0" expanded="true" />
-                <element signature="method#processConnection#0;class#Client#0" expanded="false" />
-                <element signature="method#closeConnection#0;class#Client#0" expanded="false" />
-                <element signature="method#sendData#0;class#Client#0" expanded="false" />
-                <element signature="method#displayMessage#0;class#Client#0" expanded="false" />
-                <element signature="method#setTextFieldEditable#0;class#Client#0" expanded="false" />
+                <element signature="e#0#10163#0" expanded="true" />
+                <marker date="1512361645651" expanded="false" signature="5339:6162" ph="{...}" />
+                <marker date="1512361645651" expanded="false" signature="6263:6665" ph="{...}" />
+                <marker date="1512361645651" expanded="false" signature="6769:7111" ph="{...}" />
+                <marker date="1512361645651" expanded="false" signature="7259:7621" ph="{...}" />
+                <marker date="1512361645651" expanded="false" signature="7773:8140" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -116,8 +105,8 @@
         <option value="$PROJECT_DIR$/chatApp/src/ClientTest.java" />
         <option value="$PROJECT_DIR$/chatApp/src/ServerTest.java" />
         <option value="$PROJECT_DIR$/savechat.txt" />
-        <option value="$PROJECT_DIR$/chatApp/src/Server.java" />
         <option value="$PROJECT_DIR$/chatApp/src/Client.java" />
+        <option value="$PROJECT_DIR$/chatApp/src/Server.java" />
       </list>
     </option>
   </component>
@@ -155,22 +144,6 @@
             <path>
               <item name="team16_swd" type="b2602c69:ProjectViewProjectNode" />
               <item name="team16_swd" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="team16_swd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="team16_swd" type="462c0819:PsiDirectoryNode" />
-              <item name="chatApp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="team16_swd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="team16_swd" type="462c0819:PsiDirectoryNode" />
-              <item name="chatApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="team16_swd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="team16_swd" type="462c0819:PsiDirectoryNode" />
-              <item name="icons" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -709,18 +682,17 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11006000" />
+    <option name="totallyTimeSpent" value="11063000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25513905" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -772,12 +744,12 @@
         <state relative-caret-position="85">
           <caret line="6" column="36" lean-forward="false" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="36" />
           <folding>
-            <element signature="e#0#9165#0" expanded="true" />
-            <element signature="method#processConnection#0;class#Client#0" expanded="false" />
-            <element signature="method#closeConnection#0;class#Client#0" expanded="false" />
-            <element signature="method#sendData#0;class#Client#0" expanded="false" />
-            <element signature="method#displayMessage#0;class#Client#0" expanded="false" />
-            <element signature="method#setTextFieldEditable#0;class#Client#0" expanded="false" />
+            <element signature="e#0#10163#0" expanded="true" />
+            <marker date="1512361645651" expanded="false" signature="5339:6162" ph="{...}" />
+            <marker date="1512361645651" expanded="false" signature="6263:6665" ph="{...}" />
+            <marker date="1512361645651" expanded="false" signature="6769:7111" ph="{...}" />
+            <marker date="1512361645651" expanded="false" signature="7259:7621" ph="{...}" />
+            <marker date="1512361645651" expanded="false" signature="7773:8140" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -797,13 +769,10 @@
         <state relative-caret-position="183">
           <caret line="176" column="12" lean-forward="false" selection-start-line="176" selection-start-column="12" selection-end-line="176" selection-end-column="12" />
           <folding>
-            <element signature="e#0#14545#0" expanded="true" />
+            <element signature="e#0#14524#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="method#Server#0;class#Server#0" expanded="false" />
-            <element signature="method#displayMessage#0;class#Server#0" expanded="false" />
-            <element signature="method#run#0;class#SockServer#0;class#Server#0" expanded="false" />
-            <element signature="method#waitForConnection#0;class#SockServer#0;class#Server#0" expanded="false" />
-            <element signature="method#getStreams#0;class#SockServer#0;class#Server#0" expanded="false" />
+            <element signature="e#6752#6753#0" expanded="true" />
+            <element signature="e#6789#6790#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -824,13 +793,10 @@
         <state relative-caret-position="315">
           <caret line="32" column="8" lean-forward="true" selection-start-line="32" selection-start-column="8" selection-end-line="34" selection-end-column="23" />
           <folding>
-            <element signature="e#0#14545#0" expanded="true" />
+            <element signature="e#0#14524#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="method#Server#0;class#Server#0" expanded="false" />
-            <element signature="method#displayMessage#0;class#Server#0" expanded="false" />
-            <element signature="method#run#0;class#SockServer#0;class#Server#0" expanded="false" />
-            <element signature="method#waitForConnection#0;class#SockServer#0;class#Server#0" expanded="false" />
-            <element signature="method#getStreams#0;class#SockServer#0;class#Server#0" expanded="false" />
+            <element signature="e#6752#6753#0" expanded="true" />
+            <element signature="e#6789#6790#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -861,12 +827,12 @@
         <state relative-caret-position="330">
           <caret line="29" column="23" lean-forward="false" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
           <folding>
-            <element signature="e#0#9165#0" expanded="true" />
-            <element signature="method#processConnection#0;class#Client#0" expanded="false" />
-            <element signature="method#closeConnection#0;class#Client#0" expanded="false" />
-            <element signature="method#sendData#0;class#Client#0" expanded="false" />
-            <element signature="method#displayMessage#0;class#Client#0" expanded="false" />
-            <element signature="method#setTextFieldEditable#0;class#Client#0" expanded="false" />
+            <element signature="e#0#10163#0" expanded="true" />
+            <marker date="1512361645651" expanded="false" signature="5339:6162" ph="{...}" />
+            <marker date="1512361645651" expanded="false" signature="6263:6665" ph="{...}" />
+            <marker date="1512361645651" expanded="false" signature="6769:7111" ph="{...}" />
+            <marker date="1512361645651" expanded="false" signature="7259:7621" ph="{...}" />
+            <marker date="1512361645651" expanded="false" signature="7773:8140" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -876,13 +842,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#14545#0" expanded="true" />
+            <element signature="e#0#14524#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="method#Server#0;class#Server#0" expanded="false" />
-            <element signature="method#displayMessage#0;class#Server#0" expanded="false" />
-            <element signature="method#run#0;class#SockServer#0;class#Server#0" expanded="false" />
-            <element signature="method#waitForConnection#0;class#SockServer#0;class#Server#0" expanded="false" />
-            <element signature="method#getStreams#0;class#SockServer#0;class#Server#0" expanded="false" />
+            <element signature="e#6752#6753#0" expanded="true" />
+            <element signature="e#6789#6790#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -892,12 +855,12 @@
         <state relative-caret-position="2873">
           <caret line="179" column="0" lean-forward="false" selection-start-line="179" selection-start-column="0" selection-end-line="179" selection-end-column="0" />
           <folding>
-            <element signature="e#0#9165#0" expanded="true" />
-            <element signature="method#processConnection#0;class#Client#0" expanded="false" />
-            <element signature="method#closeConnection#0;class#Client#0" expanded="false" />
-            <element signature="method#sendData#0;class#Client#0" expanded="false" />
-            <element signature="method#displayMessage#0;class#Client#0" expanded="false" />
-            <element signature="method#setTextFieldEditable#0;class#Client#0" expanded="false" />
+            <element signature="e#0#10163#0" expanded="true" />
+            <marker date="1512361645651" expanded="false" signature="5339:6162" ph="{...}" />
+            <marker date="1512361645651" expanded="false" signature="6263:6665" ph="{...}" />
+            <marker date="1512361645651" expanded="false" signature="6769:7111" ph="{...}" />
+            <marker date="1512361645651" expanded="false" signature="7259:7621" ph="{...}" />
+            <marker date="1512361645651" expanded="false" signature="7773:8140" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -959,12 +922,12 @@
         <state relative-caret-position="85">
           <caret line="6" column="36" lean-forward="false" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="36" />
           <folding>
-            <element signature="e#0#9165#0" expanded="true" />
-            <element signature="method#processConnection#0;class#Client#0" expanded="false" />
-            <element signature="method#closeConnection#0;class#Client#0" expanded="false" />
-            <element signature="method#sendData#0;class#Client#0" expanded="false" />
-            <element signature="method#displayMessage#0;class#Client#0" expanded="false" />
-            <element signature="method#setTextFieldEditable#0;class#Client#0" expanded="false" />
+            <element signature="e#0#10163#0" expanded="true" />
+            <marker date="1512361645651" expanded="false" signature="5339:6162" ph="{...}" />
+            <marker date="1512361645651" expanded="false" signature="6263:6665" ph="{...}" />
+            <marker date="1512361645651" expanded="false" signature="6769:7111" ph="{...}" />
+            <marker date="1512361645651" expanded="false" signature="7259:7621" ph="{...}" />
+            <marker date="1512361645651" expanded="false" signature="7773:8140" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -974,13 +937,10 @@
         <state relative-caret-position="155">
           <caret line="290" column="67" lean-forward="false" selection-start-line="290" selection-start-column="67" selection-end-line="290" selection-end-column="67" />
           <folding>
-            <element signature="e#0#14545#0" expanded="true" />
+            <element signature="e#0#14524#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="method#Server#0;class#Server#0" expanded="false" />
-            <element signature="method#displayMessage#0;class#Server#0" expanded="false" />
-            <element signature="method#run#0;class#SockServer#0;class#Server#0" expanded="false" />
-            <element signature="method#waitForConnection#0;class#SockServer#0;class#Server#0" expanded="false" />
-            <element signature="method#getStreams#0;class#SockServer#0;class#Server#0" expanded="false" />
+            <element signature="e#6752#6753#0" expanded="true" />
+            <element signature="e#6789#6790#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -990,13 +950,10 @@
         <state relative-caret-position="315">
           <caret line="32" column="8" lean-forward="true" selection-start-line="32" selection-start-column="8" selection-end-line="34" selection-end-column="23" />
           <folding>
-            <element signature="e#0#14545#0" expanded="true" />
+            <element signature="e#0#14524#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="method#Server#0;class#Server#0" expanded="false" />
-            <element signature="method#displayMessage#0;class#Server#0" expanded="false" />
-            <element signature="method#run#0;class#SockServer#0;class#Server#0" expanded="false" />
-            <element signature="method#waitForConnection#0;class#SockServer#0;class#Server#0" expanded="false" />
-            <element signature="method#getStreams#0;class#SockServer#0;class#Server#0" expanded="false" />
+            <element signature="e#6752#6753#0" expanded="true" />
+            <element signature="e#6789#6790#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1027,12 +984,12 @@
         <state relative-caret-position="330">
           <caret line="29" column="23" lean-forward="false" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
           <folding>
-            <element signature="e#0#9165#0" expanded="true" />
-            <element signature="method#processConnection#0;class#Client#0" expanded="false" />
-            <element signature="method#closeConnection#0;class#Client#0" expanded="false" />
-            <element signature="method#sendData#0;class#Client#0" expanded="false" />
-            <element signature="method#displayMessage#0;class#Client#0" expanded="false" />
-            <element signature="method#setTextFieldEditable#0;class#Client#0" expanded="false" />
+            <element signature="e#0#10163#0" expanded="true" />
+            <marker date="1512361645651" expanded="false" signature="5339:6162" ph="{...}" />
+            <marker date="1512361645651" expanded="false" signature="6263:6665" ph="{...}" />
+            <marker date="1512361645651" expanded="false" signature="6769:7111" ph="{...}" />
+            <marker date="1512361645651" expanded="false" signature="7259:7621" ph="{...}" />
+            <marker date="1512361645651" expanded="false" signature="7773:8140" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1042,13 +999,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#14545#0" expanded="true" />
+            <element signature="e#0#14524#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="method#Server#0;class#Server#0" expanded="false" />
-            <element signature="method#displayMessage#0;class#Server#0" expanded="false" />
-            <element signature="method#run#0;class#SockServer#0;class#Server#0" expanded="false" />
-            <element signature="method#waitForConnection#0;class#SockServer#0;class#Server#0" expanded="false" />
-            <element signature="method#getStreams#0;class#SockServer#0;class#Server#0" expanded="false" />
+            <element signature="e#6752#6753#0" expanded="true" />
+            <element signature="e#6789#6790#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1058,12 +1012,12 @@
         <state relative-caret-position="2873">
           <caret line="179" column="0" lean-forward="false" selection-start-line="179" selection-start-column="0" selection-end-line="179" selection-end-column="0" />
           <folding>
-            <element signature="e#0#9165#0" expanded="true" />
-            <element signature="method#processConnection#0;class#Client#0" expanded="false" />
-            <element signature="method#closeConnection#0;class#Client#0" expanded="false" />
-            <element signature="method#sendData#0;class#Client#0" expanded="false" />
-            <element signature="method#displayMessage#0;class#Client#0" expanded="false" />
-            <element signature="method#setTextFieldEditable#0;class#Client#0" expanded="false" />
+            <element signature="e#0#10163#0" expanded="true" />
+            <marker date="1512361645651" expanded="false" signature="5339:6162" ph="{...}" />
+            <marker date="1512361645651" expanded="false" signature="6263:6665" ph="{...}" />
+            <marker date="1512361645651" expanded="false" signature="6769:7111" ph="{...}" />
+            <marker date="1512361645651" expanded="false" signature="7259:7621" ph="{...}" />
+            <marker date="1512361645651" expanded="false" signature="7773:8140" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1119,16 +1073,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/chatApp/src/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1770">
-          <caret line="236" column="35" lean-forward="false" selection-start-line="236" selection-start-column="35" selection-end-line="236" selection-end-column="35" />
+        <state relative-caret-position="763">
+          <caret line="265" column="35" lean-forward="false" selection-start-line="265" selection-start-column="35" selection-end-line="265" selection-end-column="35" />
           <folding>
-            <element signature="e#0#14545#0" expanded="true" />
+            <element signature="e#0#14524#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="method#Server#0;class#Server#0" expanded="false" />
-            <element signature="method#displayMessage#0;class#Server#0" expanded="false" />
-            <element signature="method#run#0;class#SockServer#0;class#Server#0" expanded="false" />
-            <element signature="method#waitForConnection#0;class#SockServer#0;class#Server#0" expanded="false" />
-            <element signature="method#getStreams#0;class#SockServer#0;class#Server#0" expanded="false" />
+            <element signature="e#6752#6753#0" expanded="true" />
+            <element signature="e#6789#6790#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1150,15 +1101,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/chatApp/src/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-900">
-          <caret line="70" column="22" lean-forward="false" selection-start-line="70" selection-start-column="22" selection-end-line="70" selection-end-column="22" />
+        <state relative-caret-position="345">
+          <caret line="245" column="40" lean-forward="true" selection-start-line="245" selection-start-column="40" selection-end-line="245" selection-end-column="40" />
           <folding>
-            <element signature="e#0#9165#0" expanded="true" />
-            <element signature="method#processConnection#0;class#Client#0" expanded="false" />
-            <element signature="method#closeConnection#0;class#Client#0" expanded="false" />
-            <element signature="method#sendData#0;class#Client#0" expanded="false" />
-            <element signature="method#displayMessage#0;class#Client#0" expanded="false" />
-            <element signature="method#setTextFieldEditable#0;class#Client#0" expanded="false" />
+            <element signature="e#0#10163#0" expanded="true" />
+            <marker date="1512361645651" expanded="false" signature="5339:6162" ph="{...}" />
+            <marker date="1512361645651" expanded="false" signature="6263:6665" ph="{...}" />
+            <marker date="1512361645651" expanded="false" signature="6769:7111" ph="{...}" />
+            <marker date="1512361645651" expanded="false" signature="7259:7621" ph="{...}" />
+            <marker date="1512361645651" expanded="false" signature="7773:8140" ph="{...}" />
           </folding>
         </state>
       </provider>
